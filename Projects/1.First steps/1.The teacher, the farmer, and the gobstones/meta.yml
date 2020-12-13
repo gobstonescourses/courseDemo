@@ -5,6 +5,14 @@ attire:
     can_toggle_visibility: true
   visible: true
 blocks:
+  defaultToolbox: |
+        <category name="Primitive procedures">
+          <block type="DropAGreenStone"></block>
+          <block type="GrabARedStone"></block>
+          <block type="ChangeGreenStonesByBlueAndRedStones"></block>
+          <block type="GoToNextCell"></block>
+          <block type="GoToOrigin"></block>
+        </category>
   disabled: []
   visible: [ "COMMANDS" ]
 board:
