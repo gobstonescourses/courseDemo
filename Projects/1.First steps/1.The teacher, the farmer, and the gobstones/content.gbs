@@ -1,26 +1,26 @@
 program { 
-    PonerBolitasDeColorVerde()
-    VolverAlComienzoCambiandoBolitas()
-    SacarBolitasDeColorRojo()
-    IrAlOrigen()
+    DropGreenStones()
+    GoToOriginChangingStones()
+    GrabRedStones()
+    GoToOrigin()
 }
 
 
-procedure PonerBolitasDeColorVerde() {
+procedure DropGreenStones() {
     repeat (19) {
-        IrALaPróximaCelda()
-        PonerBolitaDeColorVerde() 
+        GoToNextCell()
+        DropAGreenStone() 
     }
 }
 
-procedure SacarBolitasDeColorRojo() {    
+procedure GrabRedStones() {    
     repeat (19) {
-        IrALaPróximaCelda()
-        SacarBolitaDeColorRojo() 
+        GoToNextCell()
+        GrabARedStone() 
     }
 }
 
-procedure VolverAlComienzoCambiandoBolitas() {
-    IrAlOrigen()
-    CambiarVerdesPorAzulesYRojas() 
+procedure GoToOriginChangingStones() {
+    GoToOrigin()
+    ChangeGreenStonesByBlueAndRedStones()
 }

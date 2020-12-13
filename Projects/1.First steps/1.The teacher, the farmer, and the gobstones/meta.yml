@@ -1,6 +1,6 @@
-name: 'El docente, el granjero y las bolitas'
+name: 'The farmer, the teacher, and the gobstones'
 attire:
-  active: Sembrando tomates
+  active: Planting tomatoes
   user_permissions:
     can_toggle_visibility: true
   visible: true

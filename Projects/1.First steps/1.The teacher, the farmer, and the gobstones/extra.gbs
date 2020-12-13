@@ -1,22 +1,22 @@
-procedure IrALaPróximaCelda() 
+procedure GoToNextCell() 
  {
    AuxSacarCursor()
    AuxPasarASiguienteCelda() 
    AuxPonerCursor()
  }
 
-procedure PonerBolitaDeColorVerde() {
+procedure DropAGreenStone() {
    if (nroBolitas(Negro) == 2) 
           { Poner(Verde) } 
-     else { BOOM("No es lugar para poner una verde") } 
+     else { BOOM("This is NOT a place to drop a green stone") } 
 }
 
-procedure SacarBolitaDeColorRojo() {
+procedure GrabRedStones() {
     if (hayBolitas(Rojo)) 
           { Sacar(Rojo) } 
-     else { BOOM("No hay bolita roja para sacar") } }
+     else { BOOM("There is no red stone to grab") } }
 
-procedure CambiarVerdesPorAzulesYRojas() {
+procedure GoToOriginChangingStones() {
     while (auxHaySiguienteCelda()) {
         AuxPasarASiguienteCelda()
         AuxCambiarVerdePorAzulYRoja() 
@@ -24,7 +24,7 @@ procedure CambiarVerdesPorAzulesYRojas() {
     IrAlBorde(Oeste); IrAlBorde(Sur)
 }
 
-procedure IrAlOrigen() 
+procedure GoToOrigin() 
   { 
     AuxSacarCursor()   
     IrAlBorde(Oeste); IrAlBorde(Sur) 
@@ -32,19 +32,19 @@ procedure IrAlOrigen()
   }
 
 procedure AuxSacarCursor() { 
-  if (nroBolitas(Negro) < 2) { BOOM("No hay suficientes bolitas negras") }
+  if (nroBolitas(Negro) < 2) { BOOM("There are not enough black stones") }
   repeat(2) { Sacar(Negro) } 
 }
 
 procedure AuxPonerCursor() { 
-  if (nroBolitas(Negro) >= 2) { BOOM("Ya hay suficientes bolitas negras") }
+  if (nroBolitas(Negro) >= 2) { BOOM("There already are enough black stones") }
   repeat(2) { Poner(Negro) } 
 }
 
 procedure AuxCambiarVerdePorAzulYRoja() { 
     if (hayBolitas(Verde)) 
             { Sacar(Verde); Poner(Azul); Poner(Rojo) } 
-       else { BOOM("No se pueden cambiar las bolitas verdes por rojas si no están todas") } 
+       else { BOOM("Green stones cannot be changed if there are not all of them present") } 
 }       
 
 function auxHaySiguienteCelda() 
@@ -55,6 +55,6 @@ procedure AuxPasarASiguienteCelda() {
          { Mover(Este) } 
     else { if (puedeMover(Norte))
                 { Mover(Norte) IrAlBorde(Oeste) } 
-           else { BOOM("Se terminaron las celdas y no puedo pasar a la siguiente") }
+           else { BOOM("There are no more cells: cannot go to the next one") }
          }
 }
