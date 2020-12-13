@@ -10,8 +10,6 @@ blocks:
           <block type="EmptyBoard"></block>
           <block type="MakeBOOMBecause_"></block>
         </category>
-        <category name="Primitive procedures" gbs_custom="PRIMITIVE_PROCEDURES">
-        </category>
         <category name="My procedures" custom="PROCEDURE_CALLS">
         </category>
         <category name="Alternatives">
@@ -33,12 +31,12 @@ blocks:
           <block type="DireccionSelector"></block>
           <block type="BoolSelector"></block>
         </category>
-        <category name="Primitive expressions" gbs_custom="PRIMITIVE_FUNCTIONS">
+        <category name="Primitive expressions">
           <block type="hayBolitas"></block>
           <block type="puedeMover"></block>
           <block type="nroBolitas"></block>
         </category>
-        <category name="Primitive functions">
+        <category name="Primitive functions" gbs_custom="PRIMITIVE_FUNCTIONS">
         </category>
         <category name="My functions" custom="FUNCTION_CALLS">
         </category>

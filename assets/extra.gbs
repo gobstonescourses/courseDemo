@@ -3,4 +3,5 @@ procedure Grab_(color)          { Sacar(color)         }
 procedure Move_(dir)            { Mover(dir)           }
 procedure GoToBorder_(dir)      { IrAlBorde(direction) }
 procedure EmptyBoard()          { VaciarTablero()      }
-procedure MakeBOOMbecause_(msg) { BOOM(msg)            }
+/*@ATTRIBUTE@block_name@Make BOOM because_@*/
+procedure MakeBOOMBecause_(msg) { BOOM(msg)            }
