@@ -1,5 +1,5 @@
 [ 
-  { "name": "First Steps"                      , "repo": "gobstonescourses/course-Demo",
+  { "name": "First Steps"                      , "repo": "gobstonescourses/courseDemo",
     "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
     "exercises": [
       { "id": "1",          "name": "The teacher, the farmer, and the gobstones",
@@ -18,7 +18,7 @@
         "path": "Projects/1.First steps/5.Two squares, but easier"
       }
     ] }
-, { "name": "Using procedures"                 , "repo": "gobstonescourses/course-Demo",
+, { "name": "Using procedures"                 , "repo": "gobstonescourses/courseDemo",
     "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
     "exercises": [
       { "id": "1",          "name": "The alien touches the button",
@@ -34,7 +34,7 @@
         "path": "Projects/2.Using procedures/4.Repairing the spaceship"
       }
     ] }
-, { "name": "Applications on teaching ideas"   , "repo": "gobstonescourses/course-Demo",
+, { "name": "Applications on teaching ideas"   , "repo": "gobstonescourses/courseDemo",
     "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
     "exercises": [
       { "id": "1",      "name": "Binary numbers, procedurally",
@@ -50,7 +50,7 @@
         "path": "Projects/3.Applications on teaching ideas/4.Representing characters"
       }
    ] }
-, { "name": "Interactive applications"         , "repo": "gobstonescourses/course-Demo",
+, { "name": "Interactive applications"         , "repo": "gobstonescourses/courseDemo",
     "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
     "exercises": [
       { "id": "1",      "name": "Basic board editor",
