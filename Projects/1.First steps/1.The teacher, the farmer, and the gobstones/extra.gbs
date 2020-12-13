@@ -11,12 +11,12 @@ procedure DropAGreenStone() {
      else { BOOM("This is NOT a place to drop a green stone") } 
 }
 
-procedure GrabRedStones() {
+procedure GrabARedStone() {
     if (hayBolitas(Rojo)) 
           { Sacar(Rojo) } 
      else { BOOM("There is no red stone to grab") } }
 
-procedure GoToOriginChangingStones() {
+procedure ChangeGreenStonesByBlueAndRedStones() {
     while (auxHaySiguienteCelda()) {
         AuxPasarASiguienteCelda()
         AuxCambiarVerdePorAzulYRoja() 
