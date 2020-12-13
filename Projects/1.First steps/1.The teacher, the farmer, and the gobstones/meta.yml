@@ -1,37 +1,14 @@
 name: 'The farmer, the teacher, and the gobstones'
 attire:
   active: Planting tomatoes
-  user_permissions:
-    can_toggle_visibility: true
-  visible: true
 blocks:
-  defaultToolbox: |
-        <category name="Primitive procedures">
-          <block type="DropAGreenStone"></block>
-          <block type="GrabARedStone"></block>
-          <block type="ChangeGreenStonesByBlueAndRedStones"></block>
-          <block type="GoToNextCell"></block>
-          <block type="GoToOrigin"></block>
-        </category>
-  disabled: []
-  visible: [ "COMMANDS" ]
-board:
-  active: 1
-  initial_board_source: selected
-  visible_edition: true
-  collapse_toolbox: false
-  user_permissions:
-    can_view_attire_section: true
-    can_edit_board: false
-    can_change_initial_board: false
-    can_change_initial_board_source: false
-    can_view_size_section: false
-execution_speed:
-  active: medium
-  user_permissions:
-    can_change_speed: true
-library:
-  visible: false
+  disabled: [ "Poner", "Sacar", "Mover", "IrAlBorde"
+            ]
+  visible:  [ "COMMANDS"
+            , "Poner", "Sacar", "Mover", "IrAlBorde"
+            , "Primitive procedures"
+            , "My procedures"
+            ]
 
 inherit:
   $course: gobstonescourses/courseDemo # (Opcional) Es para que si abre el proyecto solo le muestre un cartel de "Este ejercicio no te va a andar a menos que estés en el curso tal"
@@ -45,3 +22,9 @@ inherit:
   # -----------------------------------------------------------------
   blocks:
     defaultToolbox: true
+  execution_speed: true
+  library: true
+  board: true
+  attire:
+    user_permissions: true
+    visible: true

@@ -1,4 +1,4 @@
-#Proyect 1. The teacher, the farmer, and the stones
+# Project 1. The teacher, the farmer, and the stones
 
 Execute the program, and observe how the farmer plants the tomatoes and then he harvests them.
 

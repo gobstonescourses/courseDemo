@@ -1,14 +1,37 @@
+attire:
+  user_permissions:
+    can_toggle_visibility: true
+  visible: true
+board:
+  active: 1
+  initial_board_source: selected
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: true
+    can_edit_board: false
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_view_size_section: false
+execution_speed:
+  active: medium
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
 blocks:
   defaultToolbox: |
-      <category name="COMMANDS">
+      <category name="COMMANDS" gbs_custom="SEPARATOR">
       </category>
-        <category name="Primitive Commands">
-          <block type="Drop_"></block>
-          <block type="Grab_"></block>
-          <block type="Move_"></block>
-          <block type="GoToTheBorder_"></block>
-          <block type="EmptyBoard"></block>
-          <block type="MakeBOOMBecause_"></block>
+        <category name="Primitive commands">
+          <block type="Poner"></block>
+          <block type="Sacar"></block>
+          <block type="Mover"></block>
+          <block type="IrAlBorde"></block>
+          <block type="VaciarTablero"></block>
+          <block type="BOOM"></block>
+        </category>
+        <category name="Primitive procedures" gbs_custom="PRIMITIVE_PROCEDURES">
         </category>
         <category name="My procedures" custom="PROCEDURE_CALLS">
         </category>
@@ -16,14 +39,14 @@ blocks:
           <block type="AlternativaSimple"></block>
           <block type="AlternativaCompleta"></block>
         </category>
-        <category name="Repetitiones">
+        <category name="Repetitions">
           <block type="RepeticionSimple"></block>
           <block type="RepeticionCondicional"></block>
         </category>
-        <category name="Assigning">
+        <category name="Assigns">
           <block type="Asignacion"></block>
         </category>
-      <category name="EXPRESSIONS">
+      <category name="EXPRESSIONS" gbs_custom="SEPARATOR">
       </category>
         <category name="Literal values">
           <block type="math_number"></block>
@@ -49,7 +72,7 @@ blocks:
           <block type="previo"></block>
           <block type="opuesto"></block>
         </category>
-      <category name="DEFINITIONS">
+      <category name="DEFINITIONS" gbs_custom="SEPARATOR">
       </category>
         <category name="Procedures">
           <block type="procedures_defnoreturnnoparams"></block>
