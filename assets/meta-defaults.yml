@@ -1,0 +1,78 @@
+blocks:
+  defaultToolbox: |
+      <category name="COMMANDS">
+      </category>
+        <category name="Primitive Commands">
+          <block type="Drop_"></block>
+          <block type="Grab_"></block>
+          <block type="Move_"></block>
+          <block type="GoToTheBorder_"></block>
+          <block type="EmptyBoard"></block>
+          <block type="MakeBOOMBecause_"></block>
+        </category>
+        <category name="Primitive procedures" gbs_custom="PRIMITIVE_PROCEDURES">
+        </category>
+        <category name="My procedures" custom="PROCEDURE_CALLS">
+        </category>
+        <category name="Alternatives">
+          <block type="AlternativaSimple"></block>
+          <block type="AlternativaCompleta"></block>
+        </category>
+        <category name="Repetitiones">
+          <block type="RepeticionSimple"></block>
+          <block type="RepeticionCondicional"></block>
+        </category>
+        <category name="Assigning">
+          <block type="Asignacion"></block>
+        </category>
+      <category name="EXPRESSIONS">
+      </category>
+        <category name="Literal values">
+          <block type="math_number"></block>
+          <block type="ColorSelector"></block>
+          <block type="DireccionSelector"></block>
+          <block type="BoolSelector"></block>
+        </category>
+        <category name="Primitive expressions" gbs_custom="PRIMITIVE_FUNCTIONS">
+          <block type="hayBolitas"></block>
+          <block type="puedeMover"></block>
+          <block type="nroBolitas"></block>
+        </category>
+        <category name="Primitive functions">
+        </category>
+        <category name="My functions" custom="FUNCTION_CALLS">
+        </category>
+        <category name="Operators">
+          <block type="OperadorNumerico"></block>
+          <block type="OperadorDeComparacion"></block>
+          <block type="OperadorLogico"></block>
+          <block type="not"></block>
+          <block type="siguiente"></block>
+          <block type="previo"></block>
+          <block type="opuesto"></block>
+        </category>
+      <category name="DEFINITIONS">
+      </category>
+        <category name="Procedures">
+          <block type="procedures_defnoreturnnoparams"></block>
+          <block type="procedures_defnoreturn"></block>
+        </category>
+        <category name="Functions">
+          <block type="procedures_defreturnsimple"></block>
+          <block type="procedures_defreturnsimplewithparams"></block>
+          <block type="procedures_defreturn"></block>
+        </category>
+        <category name="Programs">
+          <block type="Program"></block>
+          <block type="InteractiveProgram"></block>
+        </category>
+        <category name="Associations">
+          <block type="InteractiveLetterBinding"></block>
+          <block type="InteractiveNumberBinding"></block>
+          <block type="InteractiveKeyBinding"></block>
+        </category>
+      <category name="Teacher Auxiliaries">
+        <block type="ComandoCompletar"></block>
+        <block type="ExpresionCompletar"></block>
+        <block type="AsociacionDeTeclaCompletar"></block>
+      </category>

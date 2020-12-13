@@ -1,0 +1,6 @@
+procedure Drop_(color)          { Poner(color)         }
+procedure Grab_(color)          { Sacar(color)         }
+procedure Move_(dir)            { Mover(dir)           }
+procedure GoToBorder_(dir)      { IrAlBorde(direction) }
+procedure EmptyBoard()          { VaciarTablero()      }
+procedure MakeBOOMbecause_(msg) { BOOM(msg)            }
