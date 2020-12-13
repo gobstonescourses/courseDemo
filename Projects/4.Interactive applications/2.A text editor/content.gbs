@@ -1,0 +1,216 @@
+procedure PonerElCarácter(códigoDelCarácter) {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure AvanzarElCursor() {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure NuevaLínea() {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure LimpiarLaCelda() {
+  BOOM("El programa todavía no está completo")
+}
+
+function códigoDelEspacio() {
+  return (0)
+}
+
+function códigoDeLaLetraA() {
+  return (1)
+}
+
+procedure MoverSiSePuede(dirección) {
+  BOOM("El programa todavía no está completo")
+}
+
+function códigoDeLaLetraB() {
+  return (2)
+}
+
+function códigoDeLaLetraC() {
+  return (3)
+}
+
+function códigoDeLaLetraD() {
+  return (4)
+}
+
+function códigoDeLaLetraE() {
+  return (5)
+}
+
+function códigoDeLaLetraF() {
+  return (6)
+}
+
+function códigoDeLaLetraG() {
+  return (7)
+}
+
+function códigoDeLaLetraH() {
+  return (8)
+}
+
+function códigoDeLaLetraI() {
+  return (9)
+}
+
+function códigoDeLaLetraJ() {
+  return (10)
+}
+
+function códigoDeLaLetraK() {
+  return (11)
+}
+
+function códigoDeLaLetraL() {
+  return (12)
+}
+
+function códigoDeLaLetraM() {
+  return (13)
+}
+
+function códigoDeLaLetraN() {
+  return (14)
+}
+
+function códigoDeLaLetraÑ() {
+  return (15)
+}
+
+function códigoDeLaLetraO() {
+  return (16)
+}
+
+function códigoDeLaLetraP() {
+  return (17)
+}
+
+function códigoDeLaLetraQ() {
+  return (18)
+}
+
+function códigoDeLaLetraR() {
+  return (19)
+}
+
+function códigoDeLaLetraS() {
+  return (20)
+}
+
+function códigoDeLaLetraT() {
+  return (21)
+}
+
+function códigoDeLaLetraU() {
+  return (22)
+}
+
+function códigoDeLaLetraV() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function códigoDeLaLetraW() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function códigoDeLaLetraX() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function códigoDeLaLetraY() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function códigoDeLaLetraZ() {
+  return (boom("El programa todavía no está completo"))
+}
+
+
+interactive program {
+  K_LEFT -> {
+    MoverSiSePuede(Oeste)
+  }
+  K_RIGHT -> {
+    MoverSiSePuede(Este)
+  }
+  K_UP -> {
+    MoverSiSePuede(Norte)
+  }
+  K_DOWN -> {
+    MoverSiSePuede(Sur)
+  }
+  K_RETURN -> {
+    NuevaLínea()
+  }
+  K_SPACE -> {
+    PonerElCarácter(códigoDelEspacio())
+  }
+  K_A -> {
+    PonerElCarácter(códigoDeLaLetraA())
+  }
+  K_B -> {
+    PonerElCarácter(códigoDeLaLetraB())
+  }
+  K_C -> {
+    PonerElCarácter(códigoDeLaLetraC())
+  }
+  K_D -> {
+    PonerElCarácter(códigoDeLaLetraD())
+  }
+  K_E -> {
+    PonerElCarácter(códigoDeLaLetraE())
+  }
+  K_F -> {
+    PonerElCarácter(códigoDeLaLetraF())
+  }
+  K_G -> {
+    PonerElCarácter(códigoDeLaLetraG())
+  }
+  K_H -> {
+    PonerElCarácter(códigoDeLaLetraH())
+  }
+  K_I -> {
+    PonerElCarácter(códigoDeLaLetraI())
+  }
+  K_J -> {
+    PonerElCarácter(códigoDeLaLetraJ())
+  }
+  K_K -> {
+    PonerElCarácter(códigoDeLaLetraK())
+  }
+  K_L -> {
+    PonerElCarácter(códigoDeLaLetraL())
+  }
+  K_M -> {
+    PonerElCarácter(códigoDeLaLetraM())
+  }
+  K_N -> {
+    PonerElCarácter(códigoDeLaLetraN())
+  }
+  K_O -> {
+    PonerElCarácter(códigoDeLaLetraO())
+  }
+  K_P -> {
+    PonerElCarácter(códigoDeLaLetraP())
+  }
+  K_Q -> {
+    PonerElCarácter(códigoDeLaLetraQ())
+  }
+  K_R -> {
+    PonerElCarácter(códigoDeLaLetraR())
+  }
+  K_S -> {
+    PonerElCarácter(códigoDeLaLetraS())
+  }
+  K_T -> {
+    PonerElCarácter(códigoDeLaLetraT())
+  }
+  K_U -> {
+    PonerElCarácter(códigoDeLaLetraU())
+  }
+}

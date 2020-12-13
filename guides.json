@@ -1,0 +1,66 @@
+[ 
+  { "name": "First Steps"                      , "repo": "gobstonescourses/course-Demo",
+    "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
+    "exercises": [
+      { "id": "1",          "name": "The teacher, the farmer, and the gobstones",
+        "path": "Projects/1.First steps/1.The teacher, the farmer, and the gobstones"
+      }
+    , { "id": "2",          "name": "Gobstones basics",
+        "path": "Projects/1.First steps/2.Gobstones basics"
+      }
+    , { "id": "3",          "name": "Programming a square",
+        "path": "Projects/1.First steps/3.Programming a square"
+      }
+    , { "id": "4",          "name": "Programming two squares",
+        "path": "Projects/1.First steps/4.Programming two squares"
+      }
+    , { "id": "5",          "name": "Two squares, but easier",
+        "path": "Projects/1.First steps/5.Two squares, but easier"
+      }
+    ] }
+, { "name": "Using procedures"                 , "repo": "gobstonescourses/course-Demo",
+    "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
+    "exercises": [
+      { "id": "1",          "name": "The alien touches the button",
+        "path": "Projects/2.Using procedures/1.The alien touches the button"
+      }
+    , { "id": "2",          "name": "We build 'The alien touches the button'",
+        "path": "Projects/2.Using procedures/2.We build 'The alien touches the button'"
+      }
+    , { "id": "3",          "name": "The great adventure of the enchanted sea",
+        "path": "Projects/2.Using procedures/3.The great adventure of the enchanted sea"
+      }
+    , { "id": "4",          "name": "Repairing the spaceship",
+        "path": "Projects/2.Using procedures/4.Repairing the spaceship"
+      }
+    ] }
+, { "name": "Applications on teaching ideas"   , "repo": "gobstonescourses/course-Demo",
+    "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
+    "exercises": [
+      { "id": "1",      "name": "Binary numbers, procedurally",
+        "path": "Projects/3.Applications on teaching ideas/1.Binary numbers, procedurally"
+      }
+    , { "id": "2",      "name": "Converting images to grayscale",
+        "path": "Projects/3.Applications on teaching ideas/2.Converting images to grayscale"
+      }
+    , { "id": "3",      "name": "About compression of information",
+        "path": "Projects/3.Applications on teaching ideas/3.About compression of information"
+      }
+    , { "id": "4",      "name": "Representing characters",
+        "path": "Projects/3.Applications on teaching ideas/4.Representing characters"
+      }
+   ] }
+, { "name": "Interactive applications"         , "repo": "gobstonescourses/course-Demo",
+    "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
+    "exercises": [
+      { "id": "1",      "name": "Basic board editor",
+        "path": "Projects/4.Interactive applications/1.Basic board editor"
+      }
+    , { "id": "2",      "name": "A text editor",
+        "path": "Projects/4.Interactive applications/2.A text editor"
+      }
+    , { "id": "3",      "name": "Snake",
+        "path": "Projects/4.Interactive applications/3.Snake"
+      }
+   ] }
+]
