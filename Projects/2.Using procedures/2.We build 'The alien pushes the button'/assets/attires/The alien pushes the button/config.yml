@@ -1,0 +1,7 @@
+name: The alien pushes the button
+rules:
+  - { image: Background.png          , when: { black: 0, blue: 0, green: 0, red: 0 } }
+  - { image: AlienAlone.png          , when: { black: 0, blue: 0, green: 1, red: 0 } }
+  - { image: ButtonAlone.png         , when: { black: 0, blue: 0, green: 0, red: 2 } }
+  - { image: AlienAndButton.png      , when: { black: 0, blue: 0, green: 1, red: 2 } }
+  - { image: AlienAndPushedButton.png, when: { black: 0, blue: 0, green: 1, red: 1 } }

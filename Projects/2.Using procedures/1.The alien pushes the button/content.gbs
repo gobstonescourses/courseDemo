@@ -1,0 +1,10 @@
+/*
+   PURPOSE: Describes the actions needed to solve the project "The alien pushes the button", 
+              by moving the Alien to the button, and then pushing it
+   PRECONDITIONS: 
+     There is an Alien represented in the initial cell, and a button represented 3 cells to the
+     East of the initial one with the cells in between, empty.
+*/
+program {
+    
+}

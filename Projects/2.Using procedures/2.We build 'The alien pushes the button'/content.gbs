@@ -1,0 +1,34 @@
+/*
+   PURPOSE: Describes the actions needed to solve the project "The alien pushes the button", 
+              by moving the Alien to the button, and then pushing it
+   PRECONDITIONS: 
+     There is an Alien represented in the initial cell, and a button represented 3 cells to the
+     East of the initial one with the cells in between, empty.
+*/
+program {
+  MoveTheAlienToTheEast()
+  MoveTheAlienToTheEast()
+  MoveTheAlienToTheEast()
+  PushButton()
+}
+
+procedure MoveTheAlienToTheEast() {
+  /*
+     PURPOSE: Move the Alien on place to the East
+     PRECONDITIONS: 
+       There is an alien represented in the initial cell
+       There is a cell to the East of the initial one
+  */
+  ...
+}
+
+procedure PushButton() {
+  /*
+     PURPOSE: Pushes the button
+     PRECONDITIONS: 
+       There is an button represented in the initial cell
+       It should also be an alien represented in the initial cell
+  */
+  ...
+}
+

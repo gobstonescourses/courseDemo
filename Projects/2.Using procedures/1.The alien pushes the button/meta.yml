@@ -1,0 +1,30 @@
+name: The alien pushes the button
+attire:
+  active: The alien pushes the button
+blocks:
+  disabled: [ "Poner", "Mover", "Sacar", "IrAlBorde"
+            , "Color", "Direccion"
+            ]
+  visible: [ "COMMANDS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                           , "Built-in procedures", "My procedures"
+           , "EXPRESSIONS" , "Color", "Direccion"
+           , "DEFINITIONS" , "procedures_defnoreturnnoparams"
+           ]
+execution_speed:
+  active: high
+
+inherit:
+  $course: gobstonescourses/courseDemo 
+  $assets:
+    extra: true
+#    attires:
+#      - The alien pushes the button
+  blocks:
+    defaultToolbox: true
+  board: true
+  attire:
+    user_permissions: true
+    visible: true
+  execution_speed:
+    user_permissions: true
+  library: true

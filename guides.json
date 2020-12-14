@@ -18,11 +18,11 @@
 , { "name": "Using procedures"                 , "repo": "gobstonescourses/courseDemo",
     "homeLink": "http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria.pdf",
     "exercises": [
-      { "id": "1",          "name": "The alien touches the button",
-        "path": "Projects/2.Using procedures/1.The alien touches the button"
+      { "id": "1",          "name": "The alien pushes the button",
+        "path": "Projects/2.Using procedures/1.The alien pushes the button"
       }
-    , { "id": "2",          "name": "We build 'The alien touches the button'",
-        "path": "Projects/2.Using procedures/2.We build 'The alien touches the button'"
+    , { "id": "2",          "name": "We build 'The alien pushes the button'",
+        "path": "Projects/2.Using procedures/2.We build 'The alien pushes the button'"
       }
     , { "id": "3",          "name": "The great adventure of the enchanted sea",
         "path": "Projects/2.Using procedures/3.The great adventure of the enchanted sea"
