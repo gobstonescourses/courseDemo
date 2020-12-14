@@ -1,4 +1,4 @@
-# Project 4. Dos cuadrados, pero más fáciles 
+# Project 4. More squares, but easier
 
 Again the idea is to draw more squares, as in the previous activity.
 And again we will propose you with two challenges.
