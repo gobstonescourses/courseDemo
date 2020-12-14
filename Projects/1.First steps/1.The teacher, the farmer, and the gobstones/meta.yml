@@ -6,20 +6,16 @@ blocks:
             ]
   visible:  [ "COMMANDS"
             , "Poner", "Sacar", "Mover", "IrAlBorde"
-            , "Primitive procedures"
+            , "Built-in procedures"
             , "My procedures"
             ]
 
 inherit:
-  $course: gobstonescourses/courseDemo # (Opcional) Es para que si abre el proyecto solo le muestre un cartel de "Este ejercicio no te va a andar a menos que estés en el curso tal"
+  $course: gobstonescourses/courseDemo 
   $assets:
     extra: true
   #  attires:
   #    - Squares
-  # -----------------------------------------------------------------
-  # De acá en adelante se puede poner cualquier fragmento de meta.yml
-  # para complementar cualquier propiedad que no esté definida acá...
-  # -----------------------------------------------------------------
   blocks:
     defaultToolbox: true
   execution_speed: true

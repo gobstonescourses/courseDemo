@@ -23,7 +23,7 @@ blocks:
   defaultToolbox: |
       <category name="COMMANDS" gbs_custom="SEPARATOR">
       </category>
-        <category name="Primitive commands">
+        <category name="Built-in commands">
           <block type="Poner"></block>
           <block type="Sacar"></block>
           <block type="Mover"></block>
@@ -31,7 +31,7 @@ blocks:
           <block type="VaciarTablero"></block>
           <block type="BOOM"></block>
         </category>
-        <category name="Primitive procedures" gbs_custom="PRIMITIVE_PROCEDURES">
+        <category name="Built-in procedures" gbs_custom="PRIMITIVE_PROCEDURES">
         </category>
         <category name="My procedures" custom="PROCEDURE_CALLS">
         </category>
@@ -54,12 +54,12 @@ blocks:
           <block type="DireccionSelector"></block>
           <block type="BoolSelector"></block>
         </category>
-        <category name="Primitive expressions">
+        <category name="Built-in expressions">
           <block type="hayBolitas"></block>
           <block type="puedeMover"></block>
           <block type="nroBolitas"></block>
         </category>
-        <category name="Primitive functions" gbs_custom="PRIMITIVE_FUNCTIONS">
+        <category name="Built-in functions" gbs_custom="PRIMITIVE_FUNCTIONS">
         </category>
         <category name="My functions" custom="FUNCTION_CALLS">
         </category>
