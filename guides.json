@@ -8,14 +8,11 @@
     , { "id": "2",          "name": "Gobstones basics",
         "path": "Projects/1.First steps/2.Gobstones basics"
       }
-    , { "id": "3",          "name": "Programming a square",
-        "path": "Projects/1.First steps/3.Programming a square"
+    , { "id": "3",          "name": "Programming squares",
+        "path": "Projects/1.First steps/3.Programming squares"
       }
-    , { "id": "4",          "name": "Programming two squares",
-        "path": "Projects/1.First steps/4.Programming two squares"
-      }
-    , { "id": "5",          "name": "Two squares, but easier",
-        "path": "Projects/1.First steps/5.Two squares, but easier"
+    , { "id": "4",          "name": "More squares, but easier",
+        "path": "Projects/1.First steps/4.More squares, but easier"
       }
     ] }
 , { "name": "Using procedures"                 , "repo": "gobstonescourses/courseDemo",

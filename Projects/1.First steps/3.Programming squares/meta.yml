@@ -1,0 +1,27 @@
+name: 'Programming squares'
+attire:
+  active: null
+  user_permissions:
+    can_toggle_visibility: true
+  visible: false
+blocks:
+  disabled: [ "Sacar"
+            ]
+  visible: [ "COMMANDS",    "Poner", "Mover", "Sacar", "IrAlBorde"
+           , "EXPRESSIONS", "Color", "Direccion"
+           ]
+execution_speed:
+  active: instantaneous
+  user_permissions:
+    can_change_speed: true
+
+inherit:
+  $course: gobstonescourses/courseDemo 
+  $assets:
+    extra: true
+  #  attires:
+  #    - Squares
+  blocks:
+    defaultToolbox: true
+  board: true
+  library: true

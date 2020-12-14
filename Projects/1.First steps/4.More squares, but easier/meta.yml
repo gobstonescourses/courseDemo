@@ -1,0 +1,29 @@
+name: 'More squares, but easier'
+attire:
+  active: null
+  user_permissions:
+    can_toggle_visibility: true
+  visible: false
+blocks:
+  disabled: [ "Sacar"
+            ]
+  visible: [ "COMMANDS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
+                           , "My procedures"
+           , "EXPRESSIONS" , "Color", "Direccion"
+           , "DEFINITIONS", "procedures_defnoreturnnoparams"
+           ]
+execution_speed:
+  active: instantaneous
+  user_permissions:
+    can_change_speed: true
+
+inherit:
+  $course: gobstonescourses/courseDemo 
+  $assets:
+    extra: true
+    attires:
+      - Squares
+  blocks:
+    defaultToolbox: true
+  board: true
+  library: true

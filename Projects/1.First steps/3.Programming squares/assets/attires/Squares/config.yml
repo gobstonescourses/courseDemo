@@ -1,0 +1,8 @@
+name: Squares
+rules:
+  - { image: Background.png, when: { black: 0, blue: 0, green: 0, red: 0 } }
+  - { image: Blue.png      , when: { black: 0, blue: 1, green: 0, red: 0 } }
+  - { image: Black.png     , when: { black: 1, blue: 0, green: 0, red: 0 } }
+  - { image: Red.png       , when: { black: 0, blue: 0, green: 0, red: 1 } }
+  - { image: Green.png     , when: { black: 0, blue: 0, green: 1, red: 0 } }
+  - { image: Purple.png    , when: { black: 0, blue: 1, green: 0, red: 1 } }
