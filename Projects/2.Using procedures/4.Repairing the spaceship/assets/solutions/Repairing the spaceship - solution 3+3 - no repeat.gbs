@@ -1,0 +1,79 @@
+/*
+*/
+program { RepairTheStarshipAndReturnHome() }
+
+procedure RepairTheStarshipAndReturnHome() {
+  /*
+  */
+  GetAllTheSteel()
+  GetAllTheCoal()
+  ReturnHome()
+}
+
+procedure GetAllTheSteel() { 
+  /*
+  */
+  GetAUnitOfSteel()
+  GetAUnitOfSteel()
+  GetAUnitOfSteel()
+}
+
+procedure GetAllTheCoal() { 
+  /*
+  */
+  GetAUnitOfCoal()
+  GetAUnitOfCoal()
+  GetAUnitOfCoal()
+}
+
+procedure GetAUnitOfSteel() {
+  /*
+  */
+  GoToTheSteelMine()
+  GrabSteel()
+  ReturnWithAUnitOfSteel()
+  AddSteelToTheSpaceship()
+}
+
+procedure GetAUnitOfCoal() {
+  /*
+  */
+  GoToTheCoalMine()
+  GrabCoal()
+  ReturnWithAUnitOfCoal()
+  AddCoalToTheSpaceship()
+}
+
+procedure GoToTheSteelMine() { 
+  /*
+  */
+  MoveMechaTo_(Norte)
+  MoveMechaTo_(Norte)
+  MoveMechaTo_(Norte)
+}
+
+procedure ReturnWithAUnitOfSteel() {
+  /*
+  */
+  MoveMechaTo_(Sur)
+  MoveMechaTo_(Sur)
+  MoveMechaTo_(Sur)
+}
+
+procedure GoToTheCoalMine() {
+  /*
+  */
+  MoveMechaTo_(Norte); MoveMechaTo_(Este)
+  MoveMechaTo_(Norte); MoveMechaTo_(Este)
+  MoveMechaTo_(Norte); MoveMechaTo_(Este)
+  MoveMechaTo_(Este)
+}
+
+procedure ReturnWithAUnitOfCoal() {
+  /*
+  */
+  MoveMechaTo_(Sur); MoveMechaTo_(Oeste)
+  MoveMechaTo_(Sur); MoveMechaTo_(Oeste)
+  MoveMechaTo_(Sur); MoveMechaTo_(Oeste)
+  MoveMechaTo_(Oeste)
+}

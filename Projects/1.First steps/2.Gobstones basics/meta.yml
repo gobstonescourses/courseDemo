@@ -6,8 +6,9 @@ attire:
   visible: false
 blocks:
   disabled: [ "IrAlBorde" ]
-  visible: [ "COMMANDS",    "Poner", "Sacar", "Mover", "IrAlBorde"
-           , "EXPRESSIONS", "Color", "Direccion" 
+  visible: [ "COMMANDS"   , "Poner", "Sacar", "Mover", "IrAlBorde"
+						              , "RepeticionSimple"
+           , "EXPRESSIONS", "Color", "Direccion", "Numero"
            ]
 board:
   active: 1

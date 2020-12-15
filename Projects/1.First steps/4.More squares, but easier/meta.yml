@@ -7,9 +7,10 @@ attire:
 blocks:
   disabled: [ "Sacar"
             ]
-  visible: [ "COMMANDS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
-                           , "My procedures"
-           , "EXPRESSIONS" , "Color", "Direccion"
+  visible: [ "COMMANDS"   , "Poner", "Mover", "Sacar", "IrAlBorde"
+                          , "My procedures"
+						              , "RepeticionSimple"
+           , "EXPRESSIONS", "Color", "Direccion", "Numero"
            , "DEFINITIONS", "procedures_defnoreturnnoparams"
            ]
 execution_speed:

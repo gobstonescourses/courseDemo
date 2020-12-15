@@ -1,0 +1,18 @@
+name: Repairing the spaceship
+rules:
+  - { image: Background.png               ,  when: { black: 0  , blue: 0  , green: 0, red: 0   } } 
+  - { image: MechaAlone.png               ,  when: { black: 0  , blue: 0  , green: 1, red: 0   } } 
+  - { image: MechaWithCoal.png            ,  when: { black: 0  , blue: 0  , green: 2, red: 0   } } 
+  - { image: MechaWithSteel.png           ,  when: { black: 0  , blue: 0  , green: 3, red: 0   } } 
+  - { image: CoalAlone.png                ,  when: { black: '*', blue: 0  , green: 0, red: 0   } } 
+  - { image: CoalAndMecha.png             ,  when: { black: '*', blue: 0  , green: 1, red: 0   } } 
+  - { image: CoalAndMechaWithCoal.png     ,  when: { black: '*', blue: 0  , green: 2, red: 0   } } 
+  - { image: CoalAndMechaWithSteel.png    ,  when: { black: '*', blue: 0  , green: 3, red: 0   } } 
+  - { image: SteelAlone.png               ,  when: { black: 0  , blue: '*', green: 0, red: 0   } } 
+  - { image: SteelAndMecha.png            ,  when: { black: 0  , blue: '*', green: 1, red: 0   } } 
+  - { image: SteelAndMechaWithCoal.png    ,  when: { black: 0  , blue: '*', green: 2, red: 0   } } 
+  - { image: SteelAndMechaWithSteel.png   ,  when: { black: 0  , blue: '*', green: 3, red: 0   } } 
+  - { image: StarshipAlone.png            ,  when: { black: 0  , blue: 0  , green: 0, red: '*' } } 
+  - { image: StarshipAndMecha.png         ,  when: { black: 0  , blue: 0  , green: 1, red: '*' } } 
+  - { image: StarshipAndMechaWithCoal.png ,  when: { black: 0  , blue: 0  , green: 2, red: '*' } } 
+  - { image: StarshipAndMechaWithSteel.png,  when: { black: 0  , blue: 0  , green: 3, red: '*' } } 

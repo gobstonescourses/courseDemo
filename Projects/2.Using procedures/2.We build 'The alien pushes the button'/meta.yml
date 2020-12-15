@@ -4,11 +4,14 @@ attire:
   visible: false
 blocks:
   disabled: [ "IrAlBorde"
+  					, "RepeticionSimple"
+            , "Numero"
             , "Built-in procedures"
             ]
   visible: [ "COMMANDS"   , "Poner", "Mover", "Sacar", "IrAlBorde"
                           , "Built-in procedures", "My procedures"
-           , "EXPRESSIONS", "Color", "Direccion"
+						              , "RepeticionSimple"
+           , "EXPRESSIONS", "Color", "Direccion", "Numero"
            , "DEFINITIONS", "procedures_defnoreturnnoparams"
            ]
 execution_speed:

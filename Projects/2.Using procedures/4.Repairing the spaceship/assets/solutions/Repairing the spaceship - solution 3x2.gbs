@@ -5,37 +5,37 @@ procedure RepararLaNaveYEscapar() {
     ConseguirUnHierro() 
     ConseguirUnCarbón()
   } 
-  VolverACasa()
+  ReturnHome()
 }
 
 procedure ConseguirUnHierro() {
   IrHastaElHierro()
-  AgarrarHierro()
+  GrabSteel()
   VolverConElHierro()
-  PonerHierroEnLaNave()
+  AddSteelToTheSpaceship()
 }
 
 procedure ConseguirUnCarbón() {
   IrHastaElCarbón()
-  AgarrarCarbón()
+  GrabCoal()
   VolverConElCarbón()
-  PonerCarbónEnLaNave()
+  AddCoalToTheSpaceship()
 }
 
 procedure IrHastaElHierro() {
-  repeat (3) { MoverMarcianoAl_(Norte) } 
+  repeat (3) { MoveMechaTo_(Norte) } 
 }
 
 procedure VolverConElHierro() {
-  repeat (3) { MoverMarcianoAl_(Sur) } 
+  repeat (3) { MoveMechaTo_(Sur) } 
 }
 
 procedure IrHastaElCarbón() {
-  repeat (3) { MoverMarcianoAl_(Norte); MoverMarcianoAl_(Este) }
-  MoverMarcianoAl_(Este)
+  repeat (3) { MoveMechaTo_(Norte); MoveMechaTo_(Este) }
+  MoveMechaTo_(Este)
 }
 
 procedure VolverConElCarbón() {
-  repeat (3) { MoverMarcianoAl_(Sur); MoverMarcianoAl_(Oeste) }
-  MoverMarcianoAl_(Oeste)
+  repeat (3) { MoveMechaTo_(Sur); MoveMechaTo_(Oeste) }
+  MoveMechaTo_(Oeste)
 }

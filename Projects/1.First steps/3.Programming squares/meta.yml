@@ -8,7 +8,8 @@ blocks:
   disabled: [ "Sacar"
             ]
   visible: [ "COMMANDS",    "Poner", "Mover", "Sacar", "IrAlBorde"
-           , "EXPRESSIONS", "Color", "Direccion"
+						              , "RepeticionSimple"
+           , "EXPRESSIONS", "Color", "Direccion", "Numero"
            ]
 execution_speed:
   active: instantaneous

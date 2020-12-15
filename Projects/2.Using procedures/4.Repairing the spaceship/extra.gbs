@@ -1,101 +1,137 @@
 ﻿/*
-   REPRESENTACIÓN:
-     * el marciano se representa con bolitas verdes
-		- 1 bolita, marciano con las manos libres
-		- 2 bolitas, marciano con carbón
-		- 3 bolitas, marciano con hierro
-	 * el carbón se representa con bolitas negras
-	    - 1 bolita por cada unidad de carbón
-	 * el hierro se representa con bolitas azules
-	    - 1 bolita por cada unidad de hierro
-	 * la nave se representa con bolitas rojas
-	    - 1 bolita roja, nave sin reparar
-		- 7 bolitas rojas, nave completamente reparada
-		- de 2 a 6 bolitas rojas, nave parcialmente reparada
+   REPRESENTATION:
+     * Mecha is represented with green stones
+		- 1 stone,  Mecha is not carrying anything
+		- 2 stones, Mecha carries coal
+		- 3 stones, Mecha carries steel
+	 * coal is represented with black stones
+	    - 1 stone for each coal unit
+	 * steel is represented with blue stones
+	    - 1 stone for each steel unit
+	 * starship is represented with red stones
+	    - 1 stone, unrepaired starship
+		  - 7 stones, completely repaired starship
+		  - from 2 to 6 stones, partially repaired starship
 */
 
-/*@ATTRIBUTE@PROPÓSITO@
-      * mover al marciano un lugar en la 
-	    dirección dada dejando el cabezal 
-		sobre el marciano@*/
-/*@ATTRIBUTE@PRECONDICIONES@
-      * el marciano está en la celda actual
-	  * hay una celda en la dirección dada@*/
-procedure MoverMarcianoAl_(dirección) {
-  n := aux_numStones(aux_Green())
-  TypeCheck(dirección, aux_North(), "`MoverAlMarcianoAl_` espera una dirección y no %1")
-  if (not aux_canMove(dirección)) { BOOM("El marciano se cae si va en esa dirección") }
-  if (n==0)                       { BOOM("El marciano no está en esta celda")         }
-  repeat (n) { AuxGrab(aux_Green()) }
-  AuxMove(dirección)
-  repeat (n) { AuxDrop(aux_Green()) }
+/*@ATTRIBUTE@PURPOSE@
+      * move Mecha one place in the given direction, leaving the head over her@*/
+/*@ATTRIBUTE@PRECONDITIONS@
+      * Mecha is represented in the current cell
+      * there is a cell in the given direction@*/
+/*@ATTRIBUTE@block_name@Move Mecha to_@*/
+procedure MoveMechaTo_(dir) {
+  mechaState := aux_readMechaState()
+  TypeCheck(dir, aux_North(), "`MoveMechaTo_` needs a direction and not a %1")
+  if (not aux_canMove(dir))            { BOOM(aux_mechaCannotMoveThereMsg()) }
+  if (not aux_mechaIsHere(mechaState)) { BOOM(aux_mechaIsNotHereMsg())       }
+  AuxGrabMecha(mechaState)
+  AuxMove(dir)
+  AuxDropMecha(mechaState)
 }
 
-/*@ATTRIBUTE@PROPÓSITO@tomar una unidad de carbón de la celda actual@*/
-/*@ATTRIBUTE@PRECONDICIONES@
-	  * el marciano está en la celda actual
-	    y hay al menos un carbón en ella
-	  * el marciano no está cargando nada
+/*@ATTRIBUTE@PURPOSE@grab a unit of coal from the current cell@*/
+/*@ATTRIBUTE@PRECONDITIONS@
+	  * Mecha is represented in the current cell
+	  * There is some coal represented in the current cell
+	  * Mecha is not carrying anything
 @*/
-procedure AgarrarCarbón() {
-  if (not aux_hasStones(aux_Green()))  { BOOM("El marciano no está en esta celda") }
-  if (not aux_hasStones(aux_Black()))  { BOOM("No hay carbón en este lugar") }
-  if (aux_numStones(aux_Green()) /= 1) { BOOM("Ya estoy cargando algo") }
-  AuxGrab(aux_Black())
-  AuxDrop(aux_Green())
+procedure GrabCoal() {
+  mechaState := aux_readMechaState()
+  if (not aux_mechaIsHere(aux_readMechaState())) { BOOM(aux_mechaIsNotHereMsg())           }
+  if (not aux_hasCoal())                         { BOOM(aux_noCoalHereMsg())               }
+  if (aux_mechaIsCarryingSomething(mechaState))  { BOOM(aux_mechaIsCarryingSomethingMsg()) }
+  AuxGrabCoal()
 }
 
-/*@ATTRIBUTE@PROPÓSITO@tomar una unidad de hierro de la celda actual@*/
-/*@ATTRIBUTE@PRECONDICIONES@
-	  * el marciano está en la celda actual
-	    y hay al menos un hierro en ella
-	  * el marciano no está cargando nada
+/*@ATTRIBUTE@PURPOSE@tomar una unidad de hierro de la celda actual@*/
+/*@ATTRIBUTE@PRECONDITIONS@
+	  * Mecha is represented in the current cell
+	  * There is some steel represented in the current cell
+	  * Mecha is not carrying anything
 @*/
-procedure AgarrarHierro() {
-  if (not aux_hasStones(aux_Green()))  { BOOM("El marciano no está en esta celda") }
-  if (not aux_hasStones(aux_Blue()))   { BOOM("No hay hierro en este lugar") }
-  if (aux_numStones(aux_Green()) /= 1) { BOOM("Ya estoy cargando algo") }
-  AuxGrab(aux_Blue())
-  AuxDrop(aux_Green())
-  AuxDrop(aux_Green())
+procedure GrabSteel() {
+  mechaState := aux_readMechaState()
+  if (not aux_mechaIsHere(mechaState))          { BOOM(aux_mechaIsNotHereMsg())           }
+  if (not aux_hasSteel())                       { BOOM(aux_noSteelHereMsg())              }
+  if (aux_mechaIsCarryingSomething(mechaState)) { BOOM(aux_mechaIsCarryingSomethingMsg()) }
+  AuxGrabSteel()
 }
 
-/*@ATTRIBUTE@PROPÓSITO@dejar una unidad de carbón en la nave@*/
-/*@ATTRIBUTE@PRECONDICIONES@
-	  * el marciano y la nave están en la celda actual
-	  * el marciano tiene un carbón
+/*@ATTRIBUTE@PURPOSE@dejar una unidad de carbón en la nave@*/
+/*@ATTRIBUTE@PRECONDITIONS@
+	  * Mecha is represented in the current cell
+    * The starship is represented in the current cell
+    * Mecha carries a unit of coal 
 @*/
-procedure PonerCarbónEnLaNave() {
-  if (not aux_hasStones(aux_Green()))  { BOOM("El marciano no está en esta celda") }
-  if (not aux_hasStones(aux_Red()))   { BOOM("No estoy en la nave") }
-  if (aux_numStones(aux_Green()) /= 2) { BOOM("No tengo carbón") }
-  AuxGrab(aux_Green())
-  AuxDrop(aux_Red())
+procedure AddCoalToTheSpaceship() {
+  mechaState := aux_readMechaState()
+  if (not aux_mechaIsHere(mechaState)) { BOOM(aux_mechaIsNotHereMsg())            }
+  if (not aux_starshipIsHere())        { BOOM(aux_mechaIsNotNearTheStarshipMsg()) }
+  if (aux_numStones(aux_Green()) /= 2) { BOOM(aux_mechaDoesNotHaveCoalMsg())      }
+  AuxDropCoal()
 }
 
-/*@ATTRIBUTE@PROPÓSITO@dejar una unidad de hierro en la nave@*/
-/*@ATTRIBUTE@PRECONDICIONES@
-	  * el marciano y la nave están en la celda actual
-	  * el marciano tiene un hierro
+/*@ATTRIBUTE@PURPOSE@dejar una unidad de hierro en la nave@*/
+/*@ATTRIBUTE@PRECONDITIONS@
+	  * Mecha is represented in the current cell
+    * The starship is represented in the current cell
+    * Mecha carries a unit of steel 
 @*/
-procedure PonerHierroEnLaNave() {
-  if (not aux_hasStones(aux_Green()))  { BOOM("El marciano no está en esta celda") }
-  if (not aux_hasStones(aux_Red()))   { BOOM("No estoy en la nave") }
-  if (aux_numStones(aux_Green()) /= 3) { BOOM("No tengo hierro") }
-  AuxGrab(aux_Green())
-  AuxGrab(aux_Green())
-  AuxDrop(aux_Red())
+procedure AddSteelToTheSpaceship() {
+  mechaState := aux_readMechaState()
+  if (not aux_mechaIsHere(mechaState)) { BOOM(aux_mechaIsNotHereMsg())            }
+  if (not aux_starshipIsHere())        { BOOM(aux_mechaIsNotNearTheStarshipMsg()) }
+  if (aux_numStones(aux_Green()) /= 3) { BOOM(aux_mechaDoesNotHaveSteelMsg())     }
+  AuxDropSteel()
 }
 
-/*@ATTRIBUTE@PROPÓSITO@hacer que el marciano se vaya en la nave@*/
-/*@ATTRIBUTE@PRECONDICIONES@
-	  * el marciano y la nave están en la celda actual
-	  * la nave está completamente reparada
+/*@ATTRIBUTE@PURPOSE@hacer que el marciano se vaya en la nave@*/
+/*@ATTRIBUTE@PRECONDITIONS@
+	  * Mecha is represented in the current cell
+    * The starship is represented in the current cell
+    * The starship is completely repaired
 @*/
-procedure VolverACasa() {
-  if (aux_numStones(aux_Red()) == 0)   { BOOM("No estoy en la nave") }
-  if (aux_numStones(aux_Red()) /= 7)   { BOOM("La nave no está lista") }
-  if (aux_numStones(aux_Green()) /= 1) { BOOM("No estoy listo para manejar la nave") }
-  AuxGrab(aux_Green())
-  repeat (7) { AuxGrab(aux_Red()) }
+procedure ReturnHome() {
+  mechaState := aux_readMechaState()
+  if (not aux_mechaIsHere(mechaState))  { BOOM(aux_mechaIsNotHereMsg())                    }
+  if (not aux_starshipIsHere())         { BOOM(aux_mechaIsNotNearTheStarshipMsg())         }
+  if (not aux_starshipIsReady())        { BOOM(aux_starshipIsNotReadyMsg())                }
+  if (not aux_mechaIsReady(mechaState)) { BOOM(aux_mechaIsNotReadyToPilotTheStarshipMsg()) }
+  AuxGrabMecha(mechaState)
+  AuxGrabStarship()
 }
+
+procedure AuxGrabMecha(mechaState) { repeat (mechaState) { AuxGrab(aux_Green()) } }
+procedure AuxDropMecha(mechaState) { repeat (mechaState) { AuxDrop(aux_Green()) } }
+procedure AuxGrabStarship()        { repeat (7) { AuxGrab(aux_Red()) }            }
+procedure AuxGrabCoal()            { AuxGrab(aux_Black()) AuxDrop(aux_Green())    }
+procedure AuxGrabSteel()           { AuxGrab(aux_Blue())  AuxDrop(aux_Green())
+                                                          AuxDrop(aux_Green())    }
+procedure AuxDropCoal()            { AuxDrop(aux_Red())   AuxGrab(aux_Green())    }
+procedure AuxDropSteel()           { AuxDrop(aux_Red())   AuxGrab(aux_Green())
+                                                          AuxGrab(aux_Green())    }
+
+function aux_readMechaState()                     { return(aux_numStones(aux_Green()))           }
+function aux_mechaIsHere(mechaState)              { return(mechaState/=0)                        }
+function aux_starshipIsHere()                     { return(aux_hasStones(aux_Red()))             }
+function aux_starshipIsReady()                    { return(aux_numStones(aux_Red())==7)          }
+function aux_mechaIsReady(mechaState)             { return(mechaState==1)                        }
+function aux_mechaIsCarryingCoal(mechaState)      { return(mechaState==2)                        }
+function aux_mechaIsCarryingSteel(mechaState)     { return(mechaState==3)                        }
+function aux_mechaIsCarryingSomething(mechaState) { return(aux_mechaIsCarryingCoal(mechaState)
+                                                        || aux_mechaIsCarryingSteel(mechaState)) }
+
+function aux_hasCoal()  { return(aux_hasStones(aux_Black())) }
+function aux_hasSteel() { return(aux_hasStones(aux_Blue()))  }
+
+function aux_mechaCannotMoveThereMsg()              { return("Mecha cannot move in that direction")      }
+function aux_mechaIsNotHereMsg()                    { return("Mecha is not in the current cell")         }
+function aux_mechaIsCarryingSomethingMsg()          { return("Mecha is already carrying something")      }
+function aux_mechaDoesNotHaveCoalMsg()              { return("Mecha does not have coal")                 }
+function aux_mechaDoesNotHaveSteelMsg()             { return("Mecha does not have steel")                }
+function aux_mechaIsNotNearTheStarshipMsg()         { return("Mecha is not near the starship")           }
+function aux_mechaIsNotReadyToPilotTheStarshipMsg() { return("Mecha is not ready to pilot the starship") }
+function aux_noCoalHereMsg()                        { return("There is no coal here")                    }
+function aux_noSteelHereMsg()                       { return("There is no steel here")                   }
+function aux_starshipIsNotReadyMsg()                { return("The starship is not ready to fly")         }
