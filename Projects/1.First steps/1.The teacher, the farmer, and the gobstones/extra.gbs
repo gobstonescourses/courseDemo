@@ -6,14 +6,14 @@ procedure GoToNextCell()
  }
 
 procedure DropAGreenStone() {
-   if (nroBolitas(Negro) == 2) 
-          { Poner(Verde) } 
+   if (aux_numStones(aux_Black()) == 2) 
+          { AuxDrop(aux_Green()) } 
      else { BOOM("This is NOT a place to drop a green stone") } 
 }
 
 procedure GrabARedStone() {
-    if (hayBolitas(Rojo)) 
-          { Sacar(Rojo) } 
+    if (aux_hasStones(aux_Red())) 
+          { AuxGrab(aux_Red()) } 
      else { BOOM("There is no red stone to grab") } }
 
 procedure ChangeGreenStonesByBlueAndRedStones() {
@@ -21,40 +21,40 @@ procedure ChangeGreenStonesByBlueAndRedStones() {
         AuxPasarASiguienteCelda()
         AuxCambiarVerdePorAzulYRoja() 
     }
-    IrAlBorde(Oeste); IrAlBorde(Sur)
+    AuxMoveToEdge(aux_West()); AuxMoveToEdge(aux_South())
 }
 
 procedure GoToOrigin() 
   { 
     AuxSacarCursor()   
-    IrAlBorde(Oeste); IrAlBorde(Sur) 
+    AuxMoveToEdge(aux_West()); AuxMoveToEdge(aux_South()) 
     AuxPonerCursor()
   }
 
 procedure AuxSacarCursor() { 
-  if (nroBolitas(Negro) < 2) { BOOM("There are not enough black stones") }
-  repeat(2) { Sacar(Negro) } 
+  if (aux_numStones(aux_Black()) < 2) { BOOM("There are not enough black stones") }
+  repeat(2) { AuxGrab(aux_Black()) } 
 }
 
 procedure AuxPonerCursor() { 
-  if (nroBolitas(Negro) >= 2) { BOOM("There already are enough black stones") }
-  repeat(2) { Poner(Negro) } 
+  if (aux_numStones(aux_Black()) >= 2) { BOOM("There already are enough black stones") }
+  repeat(2) { AuxDrop(aux_Black()) } 
 }
 
 procedure AuxCambiarVerdePorAzulYRoja() { 
-    if (hayBolitas(Verde)) 
-            { Sacar(Verde); Poner(Azul); Poner(Rojo) } 
+    if (aux_hasStones(aux_Green())) 
+            { AuxGrab(aux_Green()); AuxDrop(aux_Blue()); AuxDrop(aux_Red()) } 
        else { BOOM("Green stones cannot be changed if there are not all of them present") } 
 }       
 
 function auxHaySiguienteCelda() 
-    { return (puedeMover(Este) || puedeMover(Norte)) }
+    { return (aux_canMove(aux_East()) || aux_canMove(aux_North())) }
 
 procedure AuxPasarASiguienteCelda() {
-    if (puedeMover(Este)) 
-         { Mover(Este) } 
-    else { if (puedeMover(Norte))
-                { Mover(Norte) IrAlBorde(Oeste) } 
+    if (aux_canMove(aux_East())) 
+         { AuxMove(aux_East()) } 
+    else { if (aux_canMove(aux_North()))
+                { AuxMove(aux_North()) AuxMoveToEdge(aux_West()) } 
            else { BOOM("There are no more cells: cannot go to the next one") }
          }
 }

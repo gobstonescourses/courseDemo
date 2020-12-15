@@ -1,56 +1,81 @@
-procedure MoverProtagonistaAl_(dir) {
-    if (not auxHayProtagonista()) { BOOM("La protagonista no está en esta celda") }
-    if (not auxTodaviaNoHuyo())   { BOOM("La protagonista ya huyó") }
-    nroAzules := nroBolitas(Azul)
-    repeat (nroAzules) { Sacar(Azul) }
-    Mover(dir)
-    if ((nroBolitas(Verde) > nroAzules)) { BOOM("Todavia no estoy lista para enfrentar este desafío") }
-    if (hayBolitas(Negro)) { BOOM("Ya resolví este desafío") }
-    repeat (nroAzules) { Poner(Azul) }
+procedure MoveThePrincessTo_(dir) {
+    if (not auxThereIsPrincess()) { BOOM(auxPrincessIsNotHereMsg())         }
+    if (not auxHasNotEscaped())   { BOOM(auxPrincessHasAlreadyEscapedMsg()) }
+    princessState := auxPrincessState()
+    AuxGrabPrincess(princessState)
+    AuxMove(dir)
+    if (auxPrincessIsReadyForTask(princessState)) { BOOM(auxPrincessIsNotReadyForThisTaskMsg()) }
+    if (auxTaskDone())                            { BOOM(auxPrincessHasPerformedThisTaskMsg())  }
+    AuxDropPrincess(princessState)
 }
 
-procedure AgarrarLaLlave() {
-    if (not auxHayProtagonista()) { BOOM("La protagonista no está en esta celda") }
-    if (not auxHayLlave())        { BOOM("No estoy sobre la llave") }
-    Sacar(Verde) Poner(Azul)
+procedure GrabTheKey() {
+    if (not auxThereIsPrincess()) { BOOM(auxPrincessIsNotHereMsg())       }
+    if (not auxThereIsKey())      { BOOM(auxPrincessIsNotNearTheKeyMsg()) }
+    AuxGrabKey()
 }
 
-procedure AbrirElCofreYAgarrarElSombrero() {
-    if (not auxHayProtagonista()) { BOOM("La protagonista no está en esta celda") }
-    if (not auxHayCofre())        { BOOM("No estoy sobre el cofre") }
-    if (not auxTieneLlave())      { BOOM("No tengo la llave") }
-    Poner(Negro) Poner(Azul)
+procedure OpenTheTrunkAndTakeTheHat() {
+    if (not auxThereIsPrincess()) { BOOM(auxPrincessIsNotHereMsg())         }
+    if (not auxThereIsTrunk())    { BOOM(auxPrincessIsNotNearTheTrunkMsg()) }
+    if (not auxHasKey())          { BOOM(auxPrincessDoesNotHaveTheKeyMsg()) }
+    AuxMarkTaskDone()
 }
 
-procedure DarElSombreroAlMago() {
-    if (not auxHayProtagonista()) { BOOM("La protagonista no está en esta celda") }
-    if (not auxHayMago())         { BOOM("No estoy sobre el mago") }
-    if (not auxTieneSombrero())   { BOOM("No tengo el sombrero") }
-    Poner(Negro) Poner(Azul)
+procedure GiveTheHatToTheWizard() {
+    if (not auxThereIsPrincess()) { BOOM(auxPrincessIsNotHereMsg())          }
+    if (not auxThereIsWizard())   { BOOM(auxPrincessIsNotNearTheWizardMsg()) }
+    if (not auxHasHat())          { BOOM(auxPrincessDoesNotHaveTheHatMsg())  }
+    AuxMarkTaskDone()
 }
 
-procedure AtacarAlCaballeroConLaEspada() {
-    if (not auxHayProtagonista()) { BOOM("La protagonista no está en esta celda") }
-    if (not auxHayCaballero())    { BOOM("No estoy donde está el caballero") }
-    if (not auxTieneEspada())     { BOOM("No tengo la espada") }
-    Poner(Negro) Poner(Azul)
+procedure AttackTheDarkKnightWithTheSword() {
+    if (not auxThereIsPrincess())    { BOOM(auxPrincessIsNotHereMsg())               }
+    if (not auxThereIsBlackKnight()) { BOOM(auxPrincessIsNotNearTheBlackKnightMsg()) }
+    if (not auxHasSword())           { BOOM(auxPrincessDoesNotHaveTheSwordMsg())     }
+    AuxMarkTaskDone()
 }
 
-procedure HuirEnElUnicornio() {
-    if (not auxHayProtagonista()) { BOOM("La protagonista no está en esta celda") }
-    if (not auxHayUnicornio())    { BOOM("No estoy donde está el unicornio") }
-    if (not auxTieneAlNovio())    { BOOM("No rescate aun a mi novio") }
-    Poner(Negro) Poner(Azul)
+procedure EscapeInTheUnicorn() {
+    if (not auxThereIsPrincess()) { BOOM(auxPrincessIsNotHereMsg())                  }
+    if (not auxThereIsUnicorn())  { BOOM(auxPrincessIsNotNearTheUnicornMsg())        }
+    if (not auxHasPrince())       { BOOM(auxPrincessDoesNotHaveRescuedThePrincMsg()) }
+    AuxMarkTaskDone()
 }
 
-function auxTodaviaNoHuyo()   { IrAlBorde(Sur) IrAlBorde(Este) return(not hayBolitas(Negro)) }
-function auxHayProtagonista() { return(hayBolitas(Azul)) }
-function auxTieneLlave()      { return(nroBolitas(Azul)  == 2) }
-function auxTieneSombrero()   { return(nroBolitas(Azul)  == 3) }
-function auxTieneEspada()     { return(nroBolitas(Azul)  == 4) }
-function auxTieneAlNovio()    { return(nroBolitas(Azul)  == 5) }
-function auxHayLlave()        { return(nroBolitas(Verde) == 1) }
-function auxHayCofre()        { return(nroBolitas(Verde) == 2) }
-function auxHayMago()         { return(nroBolitas(Verde) == 3) }
-function auxHayCaballero()    { return(nroBolitas(Verde) == 4) }
-function auxHayUnicornio()    { return(nroBolitas(Verde) == 5) } 
+procedure AuxGrabPrincess(numBlue) { repeat (numBlue) { AuxGrab(aux_Blue()) } }
+procedure AuxDropPrincess(numBlue) { repeat (numBlue) { AuxDrop(aux_Blue()) } }
+procedure AuxMarkTaskDone()        { AuxDrop(aux_Black()) AuxDrop(aux_Blue()) }
+procedure AuxGrabKey()             { AuxGrab(aux_Green()) AuxDrop(aux_Blue()) }
+
+function auxPrincessState()                       { return(aux_numStones(aux_Blue()))                  }
+function auxPrincessIsReadyForTask(princessState) { return(aux_numStones(aux_Green()) > princessState) }
+function auxTaskDone()                            { return(aux_hasStones(aux_Black()))                 }
+
+function auxHasNotEscaped()      { AuxMoveToEdge(aux_South()) AuxMoveToEdge(aux_East()) 
+                                   return(not aux_hasStones(aux_Black())) 
+                                 }
+function auxThereIsPrincess()    { return(aux_hasStones(aux_Blue()))       }
+function auxHasKey()             { return(aux_numStones(aux_Blue())  == 2) }
+function auxHasHat()             { return(aux_numStones(aux_Blue())  == 3) }
+function auxHasSword()           { return(aux_numStones(aux_Blue())  == 4) }
+function auxHasPrince()          { return(aux_numStones(aux_Blue())  == 5) }
+function auxThereIsKey()         { return(aux_numStones(aux_Green()) == 1) }
+function auxThereIsTrunk()       { return(aux_numStones(aux_Green()) == 2) }
+function auxThereIsWizard()      { return(aux_numStones(aux_Green()) == 3) }
+function auxThereIsBlackKnight() { return(aux_numStones(aux_Green()) == 4) }
+function auxThereIsUnicorn()     { return(aux_numStones(aux_Green()) == 5) } 
+
+function auxPrincessIsNotHereMsg()                  { return("The Princess is not in the current cell")       }
+function auxPrincessHasAlreadyEscapedMsg()          { return("The Princess has already escaped")              }
+function auxPrincessIsNotReadyForThisTaskMsg()      { return("The Princess is not ready for this task")       }
+function auxPrincessHasPerformedThisTaskMsg()       { return("The Princess has already performed this task")  }
+function auxPrincessIsNotNearTheKeyMsg()            { return("The Princess is not near the key")              }
+function auxPrincessIsNotNearTheTrunkMsg()          { return("The Princess is not near the trunk")            }
+function auxPrincessIsNotNearTheWizardMsg()         { return("The Princess is not near the Wizard")           }
+function auxPrincessIsNotNearTheBlackKnightMsg()    { return("The Princess is not near the Black Knight")     }
+function auxPrincessIsNotNearTheUnicornMsg()        { return("The Princess is not near the Unicorn")          }
+function auxPrincessDoesNotHaveTheKeyMsg()          { return("The Princess does not have the key ")           }
+function auxPrincessDoesNotHaveTheHatMsg()          { return("The Princess does not have the hat")            }
+function auxPrincessDoesNotHaveTheSwordMsg()        { return("The Princess does not have the sword")          }
+function auxPrincessDoesNotHaveRescuedThePrincMsg() { return("The Princess does not have rescued the Prince") }

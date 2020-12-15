@@ -1,11 +1,11 @@
 procedure SacarTodasLasBolitasNegras() {
-  AuxSacar_BolitasNegras(nroBolitas(Negro))
+  AuxSacar_BolitasNegras(aux_numStones(aux_Black()))
 }
 
 procedure Poner_BolitasNegras(n) {
-  repeat(n) { Poner(Negro) }
+  repeat(n) { AuxDrop(aux_Black()) }
 }
 
 procedure AuxSacar_BolitasNegras(n) {
-  repeat(n) { Sacar(Negro) }
+  repeat(n) { AuxGrab(aux_Black()) }
 }

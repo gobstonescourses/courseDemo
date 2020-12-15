@@ -1,25 +1,25 @@
 procedure SacarTodasLasBolitasDeColor_(color) {
-  AuxSacar_BolitasDeColor_(nroBolitas(color),color)
+  AuxSacar_BolitasDeColor_(aux_numStones(color),color)
 }
 
 procedure AuxSacar_BolitasDeColor_(n,color) {
-  repeat(n) { Sacar(color) }
+  repeat(n) { AuxGrab(color) }
 }
 
 procedure AuxPoner_BolitasDeColor_(n,color) {
-  repeat(n) { Poner(color) }
+  repeat(n) { AuxDrop(color) }
 }
 
-procedure AvanzarLaCabezaAl_(dirección) {
-  AuxExtenderElTroncoAl(dirección)
-  if (puedeMover(dirección)) {
-    Mover(dirección)
+procedure AvanzarLaCabezaAl_(dir) {
+  AuxExtenderElTroncoAl(dir)
+  if (aux_canMove(dir)) {
+    AuxMove(dir)
   }
   else {
     BOOM("La víbora se cayó del tablero")
   }
   if (not(auxHayVíbora())) {
-    AuxPonerLaCabezaMirandoAl(dirección)
+    AuxPonerLaCabezaMirandoAl(dir)
   }
   else {
     BOOM("La víbora chocó consigo misma")
@@ -27,32 +27,32 @@ procedure AvanzarLaCabezaAl_(dirección) {
 }
 
 function auxHayVíbora() {
-  return (hayBolitas(Negro) || hayBolitas(Verde))
+  return (aux_hasStones(aux_Black()) || aux_hasStones(aux_Green()))
 }
 
-procedure AuxExtenderElTroncoAl(dirección) {
-  AuxCodificarSegmento(dirección,Negro)
+procedure AuxExtenderElTroncoAl(dire) {
+  AuxCodificarSegmento(dir,aux_Black())
 }
 
-procedure AuxPonerLaCabezaMirandoAl(dirección) {
-  AuxCodificarSegmento(opuesto(dirección),Verde)
+procedure AuxPonerLaCabezaMirandoAl(dir) {
+  AuxCodificarSegmento(opuesto(dir),aux_Green())
 }
 
-procedure AuxCodificarSegmento(direcciónACodificar, color) {
-  if (hayBolitas(color)) {
+procedure AuxCodificarSegmento(dirACodificar, color) {
+  if (aux_hasStones(color)) {
     BOOM("No puedo codificar un segmento aquí porque ya hay uno")
   }
   else {
-    if (direcciónACodificar == Norte) {
+    if (dirACodificar == aux_North()) {
       AuxPoner_BolitasDeColor_(1, color)
     }
-    if (direcciónACodificar == Este) {
+    if (dirACodificar == aux_East()) {
       AuxPoner_BolitasDeColor_(2, color)
     }
-    if (direcciónACodificar == Sur) {
+    if (dirACodificar == aux_South()) {
       AuxPoner_BolitasDeColor_(3, color)
     }
-    if (direcciónACodificar == Oeste) {
+    if (dirACodificar == aux_West()) {
       AuxPoner_BolitasDeColor_(4, color)
     }
   }
@@ -64,18 +64,18 @@ function direcciónDelÚltimoMovimiento() {
 }
 
 function auxDirecciónDelSegmentoPosterior() {
-  return (auxDirecciónCodificadaCon(Verde))
+  return (auxDirecciónCodificadaCon(aux_Green()))
 }
 
 function auxDirecciónCodificadaCon(color) {
-  if (nroBolitas(color) == 1) {
-    dirección := Norte
-  } elseif (nroBolitas(color) == 2) {
-    dirección := Este
-  } elseif (nroBolitas(color) == 3) {
-    dirección := Sur
+  if (aux_numStones(color) == 1) {
+    dir := aux_North()
+  } elseif (aux_numStones(color) == 2) {
+    dir := aux_East()
+  } elseif (aux_numStones(color) == 3) {
+    dir := aux_South()
   } else {
-    dirección := Oeste
+    dir := aux_West()
   }
-  return (dirección)
+  return (dir)
 }

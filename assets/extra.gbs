@@ -1,0 +1,23 @@
+procedure AuxDrop(color)     { Poner(color)    }
+procedure AuxGrab(color)     { Sacar(color)    }
+procedure AuxMove(dir)       { Mover(dir)      }
+procedure AuxMoveToEdge(dir) { IrAlBorde(dir)  }
+procedure AuxCleanBoard()    { VaciarTablero() }
+
+function aux_hasStones(color) { return (hayBolitas(color)) }
+function aux_numStones(color) { return (nroBolitas(color)) }
+function aux_canMove(dir)     { return (puedeMover(dir))   }
+
+function aux_opposite(value) { return(opuesto(value))   }
+function aux_next(value)     { return(siguiente(value)) }
+function aux_previous(value) { return(previo(value))    }
+
+function aux_Blue()  { return(Azul)  }
+function aux_Black() { return(Negro) }
+function aux_Red()   { return(Rojo)  }
+function aux_Green() { return(Verde) }
+
+function aux_North() { return(Norte) }
+function aux_East()  { return(Este)  }
+function aux_South() { return(Sur)   }
+function aux_West()  { return(Oeste) }

@@ -1,0 +1,73 @@
+program{
+    LookForTheKey()
+    LookForTheHat()
+    GetTheSword()
+    RescueThePrince()
+    LookForTheUnicornAndEscape()
+}
+
+procedure GoToTheKey() {
+    MoveThePrincessTo_(Norte) 
+    MoveThePrincessTo_(Norte)
+    MoveThePrincessTo_(Norte)
+    MoveThePrincessTo_(Este)
+    MoveThePrincessTo_(Este)
+    MoveThePrincessTo_(Este)
+    MoveThePrincessTo_(Este)
+}
+
+procedure LookForTheKey() {
+    GoToTheKey()
+    GrabTheKey()
+}
+
+procedure GoToTheTrunk() {
+    MoveThePrincessTo_(Norte)
+    MoveThePrincessTo_(Oeste)
+    MoveThePrincessTo_(Oeste)
+    MoveThePrincessTo_(Oeste)
+    MoveThePrincessTo_(Oeste)
+}
+
+procedure LookForTheHat() {
+    GoToTheTrunk()
+    OpenTheTrunkAndTakeTheHat()
+}
+
+procedure GoToTheWizard() {
+    MoveThePrincessTo_(Sur)
+    MoveThePrincessTo_(Sur)
+    MoveThePrincessTo_(Sur)
+    MoveThePrincessTo_(Sur)
+    MoveThePrincessTo_(Este)
+}
+
+procedure GetTheSword() {
+    GoToTheWizard()
+    GiveTheHatToTheWizard()
+}
+
+procedure GoToTheBlackKnight() {
+    MoveThePrincessTo_(Norte)
+    MoveThePrincessTo_(Norte)
+    MoveThePrincessTo_(Este)
+}
+
+procedure RescueThePrince() {
+    GoToTheBlackKnight()
+    AttackTheDarkKnightWithTheSword()
+}
+
+procedure GoToTheUnicorn() {
+    MoveThePrincessTo_(Sur)
+    MoveThePrincessTo_(Sur)
+    MoveThePrincessTo_(Este)
+    MoveThePrincessTo_(Este)
+}
+
+procedure LookForTheUnicornAndEscape() {
+    GoToTheUnicorn()
+    EscapeInTheUnicorn()
+}
+
+

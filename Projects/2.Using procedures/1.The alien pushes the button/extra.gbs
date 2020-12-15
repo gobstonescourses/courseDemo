@@ -1,13 +1,13 @@
 /*@ATTRIBUTE@block_name@Move the Alien to the East@*/
 procedure MoveTheAlienToTheEast() {
-  if (not hayBolitas(Verde)) { BOOM("The head is not on a cell with the Alien") }
-  if (not puedeMover(Este))  { BOOM("The Alien crashed against the wall with the button") }
-  Sacar(Verde) 
-  Mover(Este)
-  Poner(Verde)
+  if (not aux_hasStones(aux_Green())) { BOOM("The head is not on a cell with the Alien") }
+  if (not aux_canMove(aux_East()))    { BOOM("The Alien crashed against the wall with the button") }
+  AuxGrab(aux_Green()) 
+  AuxMove(aux_East())
+  AuxDrop(aux_Green())
 }
 
 procedure PushButton() { 
-  if (not hayBolitas(Rojo)) { BOOM("The Alien is too far from the button") }
-  Sacar(Rojo) 
+  if (not aux_hasStones(aux_Red())) { BOOM("The Alien is too far from the button") }
+  AuxGrab(aux_Red()) 
 }

@@ -1,0 +1,25 @@
+name: The great adventure
+rules:
+  - { image: Background.png                        , when: { black: 0, blue: 0, green: 0, red: 0 } }
+  - { image: ProtagonistAlone.png                  , when: { black: 0, blue: 1, green: 0, red: 0 } }
+  - { image: ProtagonistWithKey.png                , when: { black: 0, blue: 2, green: 0, red: 0 } }
+  - { image: ProtagonistWithHat.png                , when: { black: 0, blue: 3, green: 0, red: 0 } }
+  - { image: ProtagonistaWithSword.png             , when: { black: 0, blue: 4, green: 0, red: 0 } }
+  - { image: ProtagonistWithPrince.png             , when: { black: 0, blue: 5, green: 0, red: 0 } }
+  - { image: KeyAlone.png                          , when: { black: 0, blue: 0, green: 1, red: 0 } }
+  - { image: KeyAndProtagonist.png                 , when: { black: 0, blue: 1, green: 1, red: 0 } }
+  - { image: ClosedTrunkAlone.png                  , when: { black: 0, blue: 0, green: 2, red: 0 } }
+  - { image: ClosedTrunkAndProtagonist.png         , when: { black: 0, blue: 2, green: 2, red: 0 } }
+  - { image: OpenTrunkAndProtagonist.png           , when: { black: 1, blue: 3, green: 2, red: 0 } }
+  - { image: OpenTrunkAlone.png                    , when: { black: 1, blue: 0, green: 2, red: 0 } }
+  - { image: WizardAloneBefore.png                 , when: { black: 0, blue: 0, green: 3, red: 0 } }
+  - { image: WizardAndProtagonistBefore.png        , when: { black: 0, blue: 3, green: 3, red: 0 } }
+  - { image: WizardAndProtagonistAfter.png         , when: { black: 1, blue: 4, green: 3, red: 0 } }
+  - { image: WizardAloneAfter.png                  , when: { black: 1, blue: 0, green: 3, red: 0 } }
+  - { image: BlackKnightAndPrince.png              , when: { black: 0, blue: 0, green: 4, red: 0 } }
+  - { image: BlackKnightAndPrinceAndProtagonist.png, when: { black: 0, blue: 4, green: 4, red: 0 } }
+  - { image: DefeatedBlackKnightAndProtagonist.png , when: { black: 1, blue: 5, green: 4, red: 0 } }
+  - { image: DefeatdBlackNightAlone.png            , when: { black: 1, blue: 0, green: 4, red: 0 } }
+  - { image: UnicornAlone.png                      , when: { black: 0, blue: 0, green: 5, red: 0 } }
+  - { image: UnicornAndProtagonist.png             , when: { black: 0, blue: 5, green: 5, red: 0 } }
+  - { image: THE-END.png                           , when: { black: 1, blue: 6, green: 5, red: 0 } }
