@@ -1,3 +1,34 @@
 program {
-    
+  Drop5Stones()
+  Mover(Este)
+  ...
 }
+
+procedure Drop5Stones() {
+  ...
+}
+
+procedure Drop10Stones() {
+  ...
+}
+
+procedure Drop13Stones() {
+  ...
+}
+
+procedure Drop16Stones() {
+  ...
+}
+
+procedure Drop28Stones() {
+  ...
+}
+
+procedure Drop35Stones() {
+  ...
+}
+
+procedure Drop118Stones() {
+  ...
+}
+

@@ -1,0 +1,58 @@
+program {
+  Drop5Stones()
+  Mover(Este)
+  Drop10Stones()
+  Mover(Este)
+  Drop13Stones()
+  Mover(Este)
+  Drop16Stones()
+  Mover(Este)
+  Drop28Stones()
+  Mover(Este)
+  Drop35Stones()
+  Mover(Este)
+  Drop118Stones()
+  Mover(Este)
+}
+
+procedure Drop5Stones() {
+  Drop04RedStones()
+  Drop01RedStone()
+}
+
+procedure Drop10Stones() {
+  Drop08RedStones()
+  Drop02RedStones()
+}
+
+procedure Drop13Stones() {
+  Drop08RedStones()
+  Drop04RedStones()
+  Drop01RedStone()
+}
+
+procedure Drop16Stones() {
+  Drop16RedStones()
+}
+
+procedure Drop28Stones() {
+  Drop16RedStones()
+  Drop08RedStones()
+  Drop04RedStones()
+}
+
+procedure Drop35Stones() {
+  Drop32RedStones()
+  Drop02RedStones()
+  Drop01RedStone()
+}
+
+procedure Drop118Stones() {
+  Drop64RedStones()
+  Drop32RedStones()
+  Drop16RedStones()
+  Drop04RedStones()
+  Drop02RedStones()
+}
+
+

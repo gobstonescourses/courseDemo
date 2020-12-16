@@ -1,0 +1,16 @@
+/*@ATTRIBUTE@block_name@Drop 01 stone@*/
+procedure Drop01RedStone()  { AuxDrop_Stones( 1) }
+/*@ATTRIBUTE@block_name@Drop 02 stones@*/
+procedure Drop02RedStones() { AuxDrop_Stones( 2) }
+/*@ATTRIBUTE@block_name@Drop 04 stones@*/
+procedure Drop04RedStones() { AuxDrop_Stones( 4) }
+/*@ATTRIBUTE@block_name@Drop 08 stones@*/
+procedure Drop08RedStones() { AuxDrop_Stones( 8) }
+/*@ATTRIBUTE@block_name@Drop 16 stones@*/
+procedure Drop16RedStones() { AuxDrop_Stones(16) }
+/*@ATTRIBUTE@block_name@Drop 32 stones@*/
+procedure Drop32RedStones() { AuxDrop_Stones(32) }
+/*@ATTRIBUTE@block_name@Drop 64 stones@*/
+procedure Drop64RedStones() { AuxDrop_Stones(64) }
+
+procedure AuxDrop_Stones(num) { repeat(num) { AuxDrop(aux_Red()) } }
