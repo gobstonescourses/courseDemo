@@ -16,7 +16,7 @@ For example, `GoToTheCoalMine`, `GetAUnitOfCoal`, `ReturnWithAUnitOfCoal` may be
 Could you organize your program such as every task has its own procedure?
 When reading the resulting program, is it clearly expressed the strategy of solution that you thought?
 
-> **To rembemer**
+> **To remember**
 >
 > When defining procedures for each subtask, do not forget to use repetition for thinks that needs to be repeated!
 > And also take care of edge cases.
