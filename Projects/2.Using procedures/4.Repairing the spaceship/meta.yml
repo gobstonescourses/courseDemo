@@ -6,8 +6,7 @@ blocks:
             , "Color"
             ]
   visible: [ "COMMANDS"   , "Poner", "Mover", "Sacar", "IrAlBorde"
-                          , "Built-in procedures"
-                          , "My procedures"
+                          , "Built-in procedures", "My procedures"
 						              , "RepeticionSimple"
            , "EXPRESSIONS", "Color", "Direccion", "Numero"
            , "DEFINITIONS", "procedures_defnoreturnnoparams"

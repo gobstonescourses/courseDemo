@@ -4,10 +4,9 @@ attire:
 blocks:
   disabled: [ "Poner", "Sacar", "Mover", "IrAlBorde"
             ]
-  visible:  [ "COMMANDS"
-            , "Poner", "Sacar", "Mover", "IrAlBorde"
-            , "Built-in procedures"
-            , "My procedures"
+  visible:  [ "COMMANDS", "Poner", "Sacar", "Mover", "IrAlBorde"
+                        , "Built-in procedures", "My procedures"   
+            , "DEFINITIONS", "procedures_defnoreturnnoparams"
             ]
 
 inherit:
