@@ -9,10 +9,9 @@ blocks:
             ]
   visible: [ "COMMANDS"   , "Poner", "Mover", "Sacar", "IrAlBorde"
                           , "Built-in procedures", "My procedures"
-						              , "RepeticionSimple"
+                          , "RepeticionSimple"
            , "EXPRESSIONS", "Color", "Direccion", "Numero"
            , "DEFINITIONS", "procedures_defnoreturnnoparams"
-           , "Teacher Auxiliaries"
            ]
 board:
   visible_edition: false

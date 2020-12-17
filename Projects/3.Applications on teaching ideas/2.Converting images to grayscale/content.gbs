@@ -1,38 +1,38 @@
-procedure ConvertirLaImagenAEscalaDeGrises() {
-  repeat(9) {
-    ConvertirUnaFilaAEscalaDeGrises()
+procedure ConvertImageToGrayScale() {
+  while(puedeMover(Norte)) {
+    ConvertRowToGrayScale()
     Mover(Norte)
   }
-  ConvertirUnaFilaAEscalaDeGrises()
+  ConvertRowToGrayScale()
   IrAlBorde(Sur)
 }
 
-procedure ConvertirUnaFilaAEscalaDeGrises() {
-  repeat(9) {
-    AgrisarUnPíxel()
+procedure ConvertRowToGrayScale() {
+  while(puedeMover(Este)) {
+    ConvertAPixelToGrayScale()
     Mover(Este)
   }
-  AgrisarUnPíxel()
+  ConvertAPixelToGrayScale()
   IrAlBorde(Oeste)
 }
 
-procedure AgrisarUnPíxel() {
-  CodificarElTonoDeGris()
-  SacarTodas_(Rojo)
+procedure ConvertAPixelToGrayScale() {
+  EncodeTheGrayValue()
+  GrabAll_(Rojo)
   ...
 }
 
-procedure CodificarElTonoDeGris() {
-  repeat(promedioDeColoresRGB()) {
+procedure EncodeTheGrayValue() {
+  repeat(averageOfRGBColors()) {
     ...
   }
 }
 
-function promedioDeColoresRGB() {
+function averageOfRGBColors() {
   return (... div 3)
 }
 
 
 program {
-  ConvertirLaImagenAEscalaDeGrises()
+  ConvertImageToGrayScale()
 }

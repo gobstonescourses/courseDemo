@@ -1,62 +1,12 @@
 name: Planting tomatoes
 rules:
-  - image: ParcelaAntes-conGranjero.png
-    when:
-      black: 2
-      blue: 0
-      green: 0
-      red: 0
-  - image: ParcelaAntes.png
-    when:
-      black: 0
-      blue: 0
-      green: 0
-      red: 0
-  - image: ParcelaYSiembra-conGranjero.png
-    when:
-      black: 2
-      blue: 0
-      green: 1
-      red: 0
-  - image: ParcelaYSiembra.png
-    when:
-      black: 0
-      blue: 0
-      green: 1
-      red: 0
-  - image: ParcelaYTomates-conGranjero.png
-    when:
-      black: 2
-      blue: 1
-      green: 0
-      red: 1
-  - image: ParcelaYTomates.png
-    when:
-      black: 0
-      blue: 1
-      green: 0
-      red: 1
-  - image: ParcelaCosechada-conGranjero.png
-    when:
-      black: 2
-      blue: 1
-      green: 0
-      red: 0
-  - image: ParcelaCosechada.png
-    when:
-      black: 0
-      blue: 1
-      green: 0
-      red: 0
-  - image: Granero-conGranjero.png
-    when:
-      black: 3
-      blue: 0
-      green: 0
-      red: 0
-  - image: Granero.png
-    when:
-      black: 1
-      blue: 0
-      green: 0
-      red: 0
+  - { image: PlotBeforeWithFarmer.png    , when: { black: 2, blue: 0, green: 0, red: 0 } } 
+  - { image: PlotBefore.png              , when: { black: 0, blue: 0, green: 0, red: 0 } } 
+  - { image: SeededPlotWithFarmer.png    , when: { black: 2, blue: 0, green: 1, red: 0 } } 
+  - { image: SeededPlot.png              , when: { black: 0, blue: 0, green: 1, red: 0 } } 
+  - { image: PlotWithTomatosAndFarmer.png, when: { black: 2, blue: 1, green: 0, red: 1 } } 
+  - { image: PlotWithTomatos.png         , when: { black: 0, blue: 1, green: 0, red: 1 } } 
+  - { image: HarvestedPlotWithFarmer.png , when: { black: 2, blue: 1, green: 0, red: 0 } } 
+  - { image: HarvestedPlot.png           , when: { black: 0, blue: 1, green: 0, red: 0 } } 
+  - { image: BarnAndFarmer.png           , when: { black: 3, blue: 0, green: 0, red: 0 } } 
+  - { image: Barn.png                    , when: { black: 1, blue: 0, green: 0, red: 0 } } 

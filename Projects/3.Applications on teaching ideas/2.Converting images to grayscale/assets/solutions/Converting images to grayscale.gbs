@@ -1,0 +1,43 @@
+procedure ConvertImageToGrayScale() {
+  while(puedeMover(Norte)) {
+    ConvertRowToGrayScale()
+    Mover(Norte)
+  }
+  ConvertRowToGrayScale()
+  IrAlBorde(Sur)
+}
+
+procedure ConvertRowToGrayScale() {
+  while(puedeMover(Este)) {
+    ConvertAPixelToGrayScale()
+    Mover(Este)
+  }
+  ConvertAPixelToGrayScale()
+  IrAlBorde(Oeste)
+}
+
+procedure ConvertAPixelToGrayScale() {
+  EncodeTheGrayValue()
+  GrabAll_(Rojo)
+  GrabAll_(Verde)
+  GrabAll_(Azul)
+}
+
+procedure EncodeTheGrayValue() {
+  repeat(averageOfRGBColors()) {
+    Poner(Negro)
+  }
+}
+
+function averageOfRGBColors() {
+  return (totalNumberOfColoredStones() div 3)
+}
+
+function totalNumberOfColoredStones() {
+  return (nroBolitas(Rojo) + (nroBolitas(Verde) + nroBolitas(Azul)))
+}
+
+
+program {
+  ConvertImageToGrayScale()
+}

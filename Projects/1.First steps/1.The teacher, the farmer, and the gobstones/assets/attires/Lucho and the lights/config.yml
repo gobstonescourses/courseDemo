@@ -1,0 +1,12 @@
+name: Lucho and the lights
+rules:
+  - { image: BackgroundAndLucho.png, when: { black: 2, blue: 0, green: 0, red: 0 } }
+  - { image: Background.png        , when: { black: 0, blue: 0, green: 0, red: 0 } }
+  - { image: LightBulbAndLucho.png , when: { black: 2, blue: 0, green: 1, red: 0 } }
+  - { image: LightBulb.png         , when: { black: 0, blue: 0, green: 1, red: 0 } }
+  - { image: LightAndLucho.png     , when: { black: 2, blue: 1, green: 0, red: 1 } }
+  - { image: Light.png             , when: { black: 0, blue: 1, green: 0, red: 1 } }
+  - { image: LightBulbAndLucho.png , when: { black: 2, blue: 1, green: 0, red: 0 } }
+  - { image: LightBulb.png         , when: { black: 0, blue: 1, green: 0, red: 0 } }
+  - { image: BaseAndLucho.png      , when: { black: 3, blue: 0, green: 0, red: 0 } }
+  - { image: Base.png              , when: { black: 1, blue: 0, green: 0, red: 0 } }
