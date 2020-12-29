@@ -14,6 +14,9 @@ blocks:
                           , "OperadorLogico", "OperadorDeNegacion"
            , "DEFINITIONS", "DefinicionDeProcedimientoSimple", "DefinicionDeFuncionSimpleDeclarativa"
            ]
+board:
+  user_permissions:
+    can_change_initial_board: true
 execution_speed:
   active: instantaneous
 
@@ -23,7 +26,16 @@ inherit:
     extra: true
   blocks:
     defaultToolbox: true
-  board: true
+  board:
+    active: true
+    initial_board_source: true
+    visible_edition: true
+    collapse_toolbox: true
+    user_permissions:
+      can_view_attire_section: true
+      can_edit_board: true
+      can_change_initial_board_source: true
+      can_view_size_section: true
   attire:
     user_permissions: true
   execution_speed:

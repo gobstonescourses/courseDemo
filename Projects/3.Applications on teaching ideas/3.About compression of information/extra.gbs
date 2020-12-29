@@ -1,5 +1,5 @@
 function numStones_InTheFirstCell(color) {
-  AuxMoveToEdge(aux_West)
+  AuxMoveToEdge(aux_West())
   return (aux_numStones(color))
 }
 
