@@ -1,9 +1,9 @@
-function nroDeBolitas_EnLaPrimeraCelda(color) {
+function numStones_InTheFirstCell(color) {
   AuxMoveToEdge(aux_West)
   return (aux_numStones(color))
 }
 
-procedure SacarTodasLasBolitasDeColor_(color) {
+procedure GrabAll_(color) {
   repeat (aux_numStones(color)) 
      { AuxGrab(color) }
 }

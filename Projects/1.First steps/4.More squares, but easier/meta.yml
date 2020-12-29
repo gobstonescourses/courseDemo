@@ -11,7 +11,7 @@ blocks:
                           , "My procedures"
 						              , "RepeticionSimple"
            , "EXPRESSIONS", "Color", "Direccion", "Numero"
-           , "DEFINITIONS", "procedures_defnoreturnnoparams"
+           , "DEFINITIONS", "DefinicionDeProcedimientoSimple", "DefinicionDeProcedimiento"
            ]
 execution_speed:
   active: instantaneous
