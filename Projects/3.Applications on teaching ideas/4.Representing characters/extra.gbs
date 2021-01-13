@@ -1,3 +1,3 @@
-procedure Poner_BolitasNegras(n) {
-  repeat(n) { Poner(Negro) }
+procedure Drop_BlackStones(n) {
+  repeat(n) { AuxDrop(aux_Black()) }
 }

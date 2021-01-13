@@ -1,4 +1,4 @@
-procedure AvanzarElCursor() {
+procedure AdvanceCursor() {
   Mover(Este)
 }
 
@@ -6,19 +6,7 @@ procedure B() {
   ...
 }
 
-procedure N() {
-  ...
-}
-
-procedure T() {
-  ...
-}
-
 procedure E() {
-  ...
-}
-
-procedure O() {
   ...
 }
 
@@ -26,114 +14,120 @@ procedure G() {
   ...
 }
 
+procedure N() {
+  ...
+}
+
+procedure O() {
+  ...
+}
+
 procedure S() {
   ...
 }
 
-procedure Espacio() {
-  AvanzarElCursor()
+procedure T() {
+  ...
 }
 
-procedure F() {
-  Poner_BolitasNegras(6)
-  AvanzarElCursor()
-}
-
-procedure K() {
-  Poner_BolitasNegras(11)
-  AvanzarElCursor()
-}
-
-procedure P() {
-  Poner_BolitasNegras(17)
-  AvanzarElCursor()
-}
-
-procedure V() {
-  Poner_BolitasNegras(23)
-  AvanzarElCursor()
-}
-
-procedure Z() {
-  Poner_BolitasNegras(27)
-  AvanzarElCursor()
+procedure Space() {
+  AdvanceCursor()
 }
 
 procedure A() {
-  Poner_BolitasNegras(1)
-  AvanzarElCursor()
-}
-
-procedure H() {
-  Poner_BolitasNegras(8)
-  AvanzarElCursor()
-}
-
-procedure L() {
-  Poner_BolitasNegras(12)
-  AvanzarElCursor()
-}
-
-procedure Q() {
-  Poner_BolitasNegras(18)
-  AvanzarElCursor()
-}
-
-procedure W() {
-  Poner_BolitasNegras(24)
-  AvanzarElCursor()
+  Drop_BlackStones(1)
+  AdvanceCursor()
 }
 
 procedure C() {
-  Poner_BolitasNegras(3)
-  AvanzarElCursor()
-}
-
-procedure I() {
-  Poner_BolitasNegras(9)
-  AvanzarElCursor()
-}
-
-procedure M() {
-  Poner_BolitasNegras(13)
-  AvanzarElCursor()
-}
-
-procedure R() {
-  Poner_BolitasNegras(19)
-  AvanzarElCursor()
-}
-
-procedure X() {
-  Poner_BolitasNegras(25)
-  AvanzarElCursor()
+  Drop_BlackStones(3)
+  AdvanceCursor()
 }
 
 procedure D() {
-  Poner_BolitasNegras(4)
-  AvanzarElCursor()
+  Drop_BlackStones(4)
+  AdvanceCursor()
+}
+
+procedure F() {
+  Drop_BlackStones(6)
+  AdvanceCursor()
+}
+
+procedure H() {
+  Drop_BlackStones(8)
+  AdvanceCursor()
+}
+
+procedure I() {
+  Drop_BlackStones(9)
+  AdvanceCursor()
 }
 
 procedure J() {
-  Poner_BolitasNegras(10)
-  AvanzarElCursor()
+  Drop_BlackStones(10)
+  AdvanceCursor()
 }
 
-procedure Ñ() {
-  Poner_BolitasNegras(15)
-  AvanzarElCursor()
+procedure K() {
+  Drop_BlackStones(11)
+  AdvanceCursor()
+}
+
+procedure L() {
+  Drop_BlackStones(12)
+  AdvanceCursor()
+}
+
+procedure M() {
+  Drop_BlackStones(13)
+  AdvanceCursor()
+}
+
+procedure P() {
+  Drop_BlackStones(16)
+  AdvanceCursor()
+}
+
+procedure Q() {
+  Drop_BlackStones(17)
+  AdvanceCursor()
+}
+
+procedure R() {
+  Drop_BlackStones(18)
+  AdvanceCursor()
 }
 
 procedure U() {
-  Poner_BolitasNegras(22)
-  AvanzarElCursor()
+  Drop_BlackStones(21)
+  AdvanceCursor()
+}
+
+procedure V() {
+  Drop_BlackStones(22)
+  AdvanceCursor()
+}
+
+procedure W() {
+  Drop_BlackStones(23)
+  AdvanceCursor()
+}
+
+procedure X() {
+  Drop_BlackStones(24)
+  AdvanceCursor()
 }
 
 procedure Y() {
-  Poner_BolitasNegras(26)
-  AvanzarElCursor()
+  Drop_BlackStones(25)
+  AdvanceCursor()
 }
 
+procedure Z() {
+  Drop_BlackStones(26)
+  AdvanceCursor()
+}
 
 program {
   G()
