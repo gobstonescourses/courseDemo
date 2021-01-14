@@ -1,81 +1,37 @@
-procedure SacarTodasLasBolitasDeColor_(color) {
-  AuxSacar_BolitasDeColor_(aux_numStones(color),color)
+procedure GrabAllStonesOfColor_(color) { AuxGrab_StonesOfColor_(aux_numStones(color),color) }
+
+procedure AdvanceSnakeHeadTo_(dir) {
+  AuxExtendTheBodyTo(dir)
+  if (aux_canMove(dir))  { AuxMove(dir)                   } else { BOOM("The snake falls outside the board") }
+  if (not(auxIsSnake())) { AuxDrawSnakeHeadLookingTo(dir) } else { BOOM("The snake crashed against itself")  }
 }
 
-procedure AuxSacar_BolitasDeColor_(n,color) {
-  repeat(n) { AuxGrab(color) }
-}
+function directionofLastMovement()   { return (opuesto(auxDirectionOfNextSegment())) }
 
-procedure AuxPoner_BolitasDeColor_(n,color) {
-  repeat(n) { AuxDrop(color) }
-}
+procedure AuxGrab_StonesOfColor_(n,color) { repeat(n) { AuxGrab(color) } }
+procedure AuxDrop_StonesOfColor_(n,color) { repeat(n) { AuxDrop(color) } }
 
-procedure AvanzarLaCabezaAl_(dir) {
-  AuxExtenderElTroncoAl(dir)
-  if (aux_canMove(dir)) {
-    AuxMove(dir)
-  }
+function auxIsSnake() { return (aux_hasStones(aux_Black()) || aux_hasStones(aux_Green())) }
+
+procedure AuxExtendTheBodyTo(dir)        { AuxCodeTheSegment(dir,aux_Black())          }
+procedure AuxDrawSnakeHeadLookingTo(dir) { AuxCodeTheSegment(opuesto(dir),aux_Green()) }
+
+procedure AuxCodeTheSegment(dirToCode, color) {
+  if (aux_hasStones(color)) { BOOM("Segment cannot be coded, because there is one already in this cell") }
   else {
-    BOOM("La víbora se cayó del tablero")
-  }
-  if (not(auxHayVíbora())) {
-    AuxPonerLaCabezaMirandoAl(dir)
-  }
-  else {
-    BOOM("La víbora chocó consigo misma")
+    if (dirToCode == aux_North()) { AuxDrop_StonesOfColor_(1, color) }
+    if (dirToCode == aux_East())  { AuxDrop_StonesOfColor_(2, color) }
+    if (dirToCode == aux_South()) { AuxDrop_StonesOfColor_(3, color) }
+    if (dirToCode == aux_West())  { AuxDrop_StonesOfColor_(4, color) }
   }
 }
 
-function auxHayVíbora() {
-  return (aux_hasStones(aux_Black()) || aux_hasStones(aux_Green()))
-}
+function auxDirectionOfNextSegment() { return (auxDirectionCodedWith(aux_Green()))   }
 
-procedure AuxExtenderElTroncoAl(dire) {
-  AuxCodificarSegmento(dir,aux_Black())
-}
-
-procedure AuxPonerLaCabezaMirandoAl(dir) {
-  AuxCodificarSegmento(opuesto(dir),aux_Green())
-}
-
-procedure AuxCodificarSegmento(dirACodificar, color) {
-  if (aux_hasStones(color)) {
-    BOOM("No puedo codificar un segmento aquí porque ya hay uno")
-  }
-  else {
-    if (dirACodificar == aux_North()) {
-      AuxPoner_BolitasDeColor_(1, color)
-    }
-    if (dirACodificar == aux_East()) {
-      AuxPoner_BolitasDeColor_(2, color)
-    }
-    if (dirACodificar == aux_South()) {
-      AuxPoner_BolitasDeColor_(3, color)
-    }
-    if (dirACodificar == aux_West()) {
-      AuxPoner_BolitasDeColor_(4, color)
-    }
-  }
-}
-
-/*@ATTRIBUTE@block_name@dirección del último movimiento@*/
-function direcciónDelÚltimoMovimiento() {
-  return (opuesto(auxDirecciónDelSegmentoPosterior()))
-}
-
-function auxDirecciónDelSegmentoPosterior() {
-  return (auxDirecciónCodificadaCon(aux_Green()))
-}
-
-function auxDirecciónCodificadaCon(color) {
-  if (aux_numStones(color) == 1) {
-    dir := aux_North()
-  } elseif (aux_numStones(color) == 2) {
-    dir := aux_East()
-  } elseif (aux_numStones(color) == 3) {
-    dir := aux_South()
-  } else {
-    dir := aux_West()
-  }
+function auxDirectionCodedWith(color) {
+  if      (aux_numStones(color) == 1) { dir := aux_North() }
+   elseif (aux_numStones(color) == 2) { dir := aux_East()  }
+   elseif (aux_numStones(color) == 3) { dir := aux_South() } 
+   else                               { dir := aux_West()  }
   return (dir)
 }

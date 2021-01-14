@@ -1,89 +1,56 @@
-procedure MoverLaVíboraAl(dirección) {
-  AvanzarLaCabezaAl_(dirección)
-  if (hayUnaManzana()) {
-    SacarLaManzana()
-  } else {
-    AvanzarLaColaDeLaVíbora()
-  }
-}
-
-procedure AvanzarLaColaDeLaVíbora() {
-  IrDeLaCabezaALaCola()
-  AvanzarLaCola()
-  IrDeLaColaALaCabeza()
-}
-
-procedure IrDeLaCabezaALaCola() {
-  while (not (hayCola())) {
-    Mover(direcciónDelSegmentoPosterior())
-  }
-}
-
-procedure SacarLaManzana() {
-  Sacar(Rojo)
-}
-
-procedure AvanzarLaCola() {
-  direcciónParaVolver := direcciónDelSegmentoAnterior()
-  SacarTodasLasBolitasDeColor_(Negro)
-  Mover(direcciónParaVolver)
-  SacarTodasLasBolitasDeColor_(Verde)
-}
-
-procedure IrDeLaColaALaCabeza() {
-  while (not (hayCabeza())) {
-    Mover(direcciónDelSegmentoAnterior())
-  }
-}
-
-function hayUnaManzana() {
-  return (nroBolitas(Rojo) == 1)
-}
-
-function direcciónCodificada(color) {
-  if (nroBolitas(color) == 1) {
-    dirección := Norte
-  } elseif (nroBolitas(color) == 2) {
-    dirección := Este
-  } elseif (nroBolitas(color) == 3) {
-    dirección := Sur
-  } else {
-    dirección := Oeste
-  }
-  return (dirección)
-}
-
-function hayCabeza() {
-  return (not(hayBolitas(Negro)) && hayBolitas(Verde))
-}
-
-function hayCola() {
-  return (hayBolitas(Negro) && not(hayBolitas(Verde)))
-}
-
-function direcciónDelSegmentoAnterior() {
-  return (direcciónCodificada(Negro))
-}
-
-function direcciónDelSegmentoPosterior() {
-  return (direcciónCodificada(Verde))
-}
-
-
 interactive program {
-  K_LEFT -> {
-    MoverLaVíboraAl(Oeste)
-  }
-  K_RIGHT -> {
-    MoverLaVíboraAl(Este)
-  }
-  K_UP -> {
-    MoverLaVíboraAl(Norte)
-  }
-  K_DOWN -> {
-    MoverLaVíboraAl(Sur)
-  }
-  TIMEOUT(500) -> {
-  MoverLaVíboraAl(direcciónDelÚltimoMovimiento())
+  K_LEFT       -> { MoveTheSnakeTo(Oeste)                     }
+  K_RIGHT      -> { MoveTheSnakeTo(Este)                      }
+  K_UP         -> { MoveTheSnakeTo(Norte)                     }
+  K_DOWN       -> { MoveTheSnakeTo(Sur)                       }
+  TIMEOUT(500) -> { MoveTheSnakeTo(directionofLastMovement()) }
+}
+
+procedure MoveTheSnakeTo(direction) {
+  AdvanceSnakeHeadTo_(direction)
+  if (hasApple()) { EatTheApple() } 
+   else { AdvanceSnakeTail() }
+}
+
+procedure AdvanceSnakeTail() {
+  GoFromSnakeHeadToSnakeTail()
+  AdvanceTail()
+  GoFromSnakeTailToSnakeHead()
+}
+
+procedure GoFromSnakeHeadToSnakeTail() {
+  while (not (hasSnakeTail())) {
+    Mover(directionOfNextSnakeSegment())
   }
 }
+
+procedure EatTheApple() { Sacar(Rojo) }
+
+procedure AdvanceTail() {
+  directionToReturn := directionOfPreviousSnakeSegment()
+  GrabAllStonesOfColor_(Negro)
+  Mover(directionToReturn)
+  GrabAllStonesOfColor_(Verde)
+}
+
+procedure GoFromSnakeTailToSnakeHead() {
+  while (not (hasSnakeHead())) {
+    Mover(directionOfPreviousSnakeSegment())
+  }
+}
+
+function hasApple() { return (nroBolitas(Rojo) == 1) }
+
+function codedDirection(color) {
+  if      (nroBolitas(color) == 1) { direction := Norte } 
+   elseif (nroBolitas(color) == 2) { direction := Este } 
+   elseif (nroBolitas(color) == 3) { direction := Sur  } 
+   else                            { direction := Oeste }
+  return (direction)
+}
+
+function hasSnakeHead() { return (not(hayBolitas(Negro)) && hayBolitas(Verde)) }
+function hasSnakeTail() { return (hayBolitas(Negro) && not(hayBolitas(Verde))) }
+
+function directionOfPreviousSnakeSegment()  { return (codedDirection(Negro)) }
+function directionOfNextSnakeSegment()      { return (codedDirection(Verde)) }
