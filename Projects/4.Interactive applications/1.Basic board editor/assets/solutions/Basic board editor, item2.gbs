@@ -1,0 +1,14 @@
+interactive program {
+  K_LEFT    -> { Mover(Oeste) }
+  K_RIGHT   -> { Mover(Este)  }
+  K_UP      -> { Mover(Norte) }
+  K_DOWN    -> { Mover(Sur)   }
+  K_R       -> { Poner(Rojo)  }
+  K_G       -> { Poner(Azul)  }
+  K_B       -> { Poner(Verde) }
+  K_K       -> { Poner(Negro) }
+  K_SHIFT_R -> { Sacar(Rojo)  }
+  K_SHIFT_G -> { Sacar(Verde) }
+  K_SHIFT_B -> { Sacar(Azul)  }
+  K_SHIFT_K -> { Sacar(Negro) }
+}
