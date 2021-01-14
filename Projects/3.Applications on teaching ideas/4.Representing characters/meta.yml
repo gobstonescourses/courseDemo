@@ -21,6 +21,8 @@ inherit:
   $course: gobstonescourses/courseDemo 
   $assets:
     extra: true
+    attires:
+     - Letters
   blocks:
     defaultToolbox: true
   board: true

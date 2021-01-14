@@ -1,11 +1,11 @@
-procedure SacarTodasLasBolitasNegras() {
-  AuxSacar_BolitasNegras(aux_numStones(aux_Black()))
+procedure GrabAllBlackStones() {
+  AuxGrab_BlackStones(aux_numStones(aux_Black()))
 }
 
-procedure Poner_BolitasNegras(n) {
+procedure Drop_BlackStones(n) {
   repeat(n) { AuxDrop(aux_Black()) }
 }
 
-procedure AuxSacar_BolitasNegras(n) {
+procedure AuxGrab_BlackStones(n) {
   repeat(n) { AuxGrab(aux_Black()) }
 }

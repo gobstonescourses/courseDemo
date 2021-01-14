@@ -26,6 +26,8 @@ inherit:
   $course: gobstonescourses/courseDemo 
   $assets:
     extra: true
+    attires:
+     - RGB Colors
   blocks:
     defaultToolbox: true
   board:

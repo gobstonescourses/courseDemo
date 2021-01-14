@@ -19,8 +19,8 @@ inherit:
   $course: gobstonescourses/courseDemo 
   $assets:
     extra: true
-#    attires:
-#      - The alien pushes the button
+    attires:
+      - The alien pushes the button
   blocks:
     defaultToolbox: true
   board: true

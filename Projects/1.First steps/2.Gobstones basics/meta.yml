@@ -30,8 +30,6 @@ inherit:
   $course: gobstonescourses/courseDemo 
   $assets:
     extra: true
-  #  attires:
-  #    - Squares
   blocks:
     defaultToolbox: true
   library: true

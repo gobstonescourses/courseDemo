@@ -1,27 +1,30 @@
 procedure DrawCharacter(codeOfCharacter) {
-  ...
+  ClearCell()
+  Drop_BlackStones(codeOfCharacter)
+  AdvanceCursor()
 }
 
 procedure AdvanceCursor() {
-  ...
+  if (puedeMover(Este)) { Mover(Este)    } 
+  else                  { GoToANewLine() }
 }
 
 procedure GoToANewLine() {
-  ...
+  MoveIfPossible(Sur)
+  IrAlBorde(Oeste)
 }
 
 procedure ClearCell() {
-  ...
+  GrabAllBlackStones()
 }
 
 procedure MoveIfPossible(direction) {
-  ...
+  if (puedeMover(direction)) {
+    Mover(direction)
+  }
 }
 
-function codeOfSpace() {
-  return (0)
-}
-
+function codeOfSpace()   { return ( 0) }
 function codeOfLetterA() { return ( 1) }
 function codeOfLetterB() { return ( 2) }
 function codeOfLetterC() { return ( 3) }
@@ -43,11 +46,11 @@ function codeOfLetterR() { return (18) }
 function codeOfLetterS() { return (19) }
 function codeOfLetterT() { return (20) }
 function codeOfLetterU() { return (21) }
-function codeOfLetterV() { return (...)}
-function codeOfLetterW() { return (...)}
-function codeOfLetterX() { return (...)}
-function codeOfLetterY() { return (...)}
-function codeOfLetterZ() { return (...)}
+function codeOfLetterV() { return (22) }
+function codeOfLetterW() { return (23) }
+function codeOfLetterX() { return (24) }
+function codeOfLetterY() { return (25) }
+function codeOfLetterZ() { return (26) }
 
 interactive program {
   K_LEFT   -> { MoveIfPossible(Oeste)          }
@@ -70,6 +73,7 @@ interactive program {
   K_L      -> { DrawCharacter(codeOfLetterL()) }
   K_M      -> { DrawCharacter(codeOfLetterM()) }
   K_N      -> { DrawCharacter(codeOfLetterN()) }
+  K_Ñ      -> { DrawCharacter(codeOfLetterÑ()) }
   K_O      -> { DrawCharacter(codeOfLetterO()) }
   K_P      -> { DrawCharacter(codeOfLetterP()) }
   K_Q      -> { DrawCharacter(codeOfLetterQ()) }
@@ -77,4 +81,9 @@ interactive program {
   K_S      -> { DrawCharacter(codeOfLetterS()) }
   K_T      -> { DrawCharacter(codeOfLetterT()) }
   K_U      -> { DrawCharacter(codeOfLetterU()) }
+  K_V      -> { DrawCharacter(codeOfLetterV()) }
+  K_W      -> { DrawCharacter(codeOfLetterW()) }
+  K_X      -> { DrawCharacter(codeOfLetterX()) }
+  K_Y      -> { DrawCharacter(codeOfLetterY()) }
+  K_Z      -> { DrawCharacter(codeOfLetterZ()) }
 }

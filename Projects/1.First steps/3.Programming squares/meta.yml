@@ -20,8 +20,8 @@ inherit:
   $course: gobstonescourses/courseDemo 
   $assets:
     extra: true
-  #  attires:
-  #    - Squares
+    attires:
+      - Squares
   blocks:
     defaultToolbox: true
   board: true
