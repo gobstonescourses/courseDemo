@@ -75,7 +75,7 @@ blocks:
       <category name="DEFINITIONS" gbs_custom="SEPARATOR">
       </category>
         <category name="Procedures">
-          <block type="DefinicionDeProcedimientoSimple"></block>
+          <block type="procedures_defnoreturnnoparams"></block> 
           <block type="procedures_defnoreturn"></block>
         </category>
         <category name="Functions">
