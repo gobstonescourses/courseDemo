@@ -11,7 +11,7 @@ blocks:
                           , "nroBolitas", "hayBolitas", "puedeMover"
                           , "OperadorNumerico", "OperadorDeComparacion", "OperadorOpuesto"
                           , "OperadorLogico", "OperadorDeNegacion"
-           , "DEFINITIONS", "DefinicionDeProcedimientoSimple", "DefinicionDeFuncionSimpleDeclarativa"
+           , "DEFINITIONS", "procedures_defnoreturnnoparams", "DefinicionDeFuncionSimpleDeclarativa"
            ]
 execution_speed:
   active: high

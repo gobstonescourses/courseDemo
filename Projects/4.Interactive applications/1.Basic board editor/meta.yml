@@ -14,7 +14,7 @@ blocks:
                           , "OperadorNumerico", "OperadorDeComparacion", "OperadorOpuesto"
                           , "OperadorLogico", "OperadorDeNegacion"
                           , "siguiente", "previo", "opuesto"
-           , "DEFINITIONS", "procedures_defnoreturn", "procedures_defreturn"
+           , "DEFINITIONS", "procedures_defnoreturn", "DefinicionDeFuncionDeclarativa"
                           , "InteractiveProgram"
                           , "InteractiveLetterBinding", "InteractiveNumberBinding", "InteractiveKeyBinding"
            ]
